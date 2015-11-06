@@ -1,7 +1,7 @@
 {{<layout}}
 
 {{$pageTitle}}
-	National Insurance Class 2 Reform
+    National Insurance Class 2 Reform
 {{/pageTitle}}
 
 {{$main}}
@@ -9,17 +9,13 @@
     <main id="content" role="main">
         <div class="grid-row">
             <div class="column-two-thirds">
-                <h1 class="heading-xlarge info-display">Change dates</h1>
+                <h1 class="heading-xlarge info-display">Change your to date</h1>
 
-                <p class="lede">You have chosen to change one or more dates from the following period of liability.</p>
+                <p>Your current to date is 18th June 2014</p>
 
                 <div class="panel-indent panel-indent-info">
                     <table>
                         <tbody>
-                            <tr>
-                                <th width="30%">From date</th>
-                                <td width="">6th April 2014</td>
-                            </tr>
                             <tr>
                                 <th>To date</th>
                                 <td>18th June 2014</td>
@@ -28,30 +24,38 @@
                     </table>
                 </div>
 
-                <p>&nbsp;</p>
-
                 <form>
                     <fieldset>
-                        <legend class="form-label-bold">Which of these dates would you like to change?</legend>
-                        <label class="block-label" for="radio-1">
-                            <input id="radio-1" type="radio" name="radio-group" value="from_date">From date</label>
-                        <label class="block-label" for="radio-2">
-                            <input id="radio-2" type="radio" name="radio-group" value="to_date">To date
-                        </label>
 
-                        <p class="form-block">or</p>
+                      <legend class="form-label-bold">Choose new from date</legend>
 
-                        <label class="block-label" for="radio-3">
-                            <input id="radio-3" type="radio" name="radio-group" value="both_dates">Both dates
-                        </label>
+                      <div class="form-date">
+
+                        <p class="form-hint">For example, 31 3 1980</p>
+
+                        <div class="form-group form-group-day">
+                          <label for="dob-day">Day</label>
+                          <input class="form-control" id="dob-day" name="dob-day" type="number" pattern="[0-9]*" min="0" max="31">
+                        </div>
+
+                        <div class="form-group form-group-month">
+                          <label for="dob-month">Month</label>
+                          <input class="form-control" id="dob-month" name="dob-month" type="number" pattern="[0-9]*" min="0" max="12">
+                        </div>
+
+                        <div class="form-group form-group-year">
+                          <label for="dob-year">Year</label>
+                          <input class="form-control" id="dob-year" name="dob-year" type="number" pattern="[0-9]*" min="0" max="2014">
+                        </div>
+                      </div>
+
                     </fieldset>
-
-                    <p>&nbsp;</p>
+                                        <p>&nbsp;</p>
 
                     <div class="form-group>">
                         <input class="button" type="submit" value="Continue">
                     </div>
-                </form>
+                  </form>
 
                 <a href="javascript:history.go(-1)" class="link-back">Back</a>
 
