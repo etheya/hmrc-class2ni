@@ -9,11 +9,11 @@
     <main id="content" role="main">
         <div class="grid-row">
             <div class="column-two-thirds">
-                <h1 class="heading-xlarge info-display">Change your Class 2 liability dates</h1>
+                <h1 class="heading-xlarge info-display">Change your liability dates</h1>
 
                 <p>You have chosen to change one or more dates from the following period of National Insurance Class 2 liability.</p>
 
-                <div class="panel-indent panel-indent-info">
+                <div class="panel-indent panel-indent-info space">
                     <table>
                         <tbody>
                             <tr>
@@ -28,23 +28,23 @@
                     </table>
                 </div>
 
-                <p>&nbsp;</p>
+
 
                 <form method="post">
                     <fieldset>
                         <legend class="form-label-bold">Which of these dates would you like to change?</legend>
                         {{! <span class="form-hint">It'll be on your last payslip. For example, JH 21 90 0A.</span> }}
                         <label class="block-label" for="radio-1">
-                            <input id="radio-1" type="radio" name="next-page" value="from-date">Start date</label>
+                            <input id="radio-1" type="radio" name="next-page" value="change-start-date">Start date</label>
 
                         <label class="block-label" for="radio-2">
-                            <input id="radio-2" type="radio" name="next-page" value="to-date">End date
+                            <input id="radio-2" type="radio" name="next-page" value="change-end-date">End date
                         </label>
 
                         <p class="form-block">or</p>
 
                         <label class="block-label" for="radio-3">
-                            <input id="radio-3" type="radio" name="next-page" value="both_dates">Both dates
+                            <input id="radio-3" type="radio" name="next-page" value="change-both-dates">Both dates
                         </label>
                     </fieldset>
 
