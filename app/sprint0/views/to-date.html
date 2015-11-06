@@ -9,9 +9,9 @@
     <main id="content" role="main">
         <div class="grid-row">
             <div class="column-two-thirds">
-                <h1 class="heading-xlarge info-display">Change your liability dates</h1>
+                <h1 class="heading-xlarge info-display">Change dates</h1>
 
-                <p>You have chosen to change one or more dates from the following period of National Insurance Class 2 liability.</p>
+                <p class="lede">You have chosen to change one or more dates from the following period of liability.</p>
 
                 <div class="panel-indent panel-indent-info">
                     <table>
@@ -30,20 +30,19 @@
 
                 <p>&nbsp;</p>
 
-                <form method="post">
+                <form>
                     <fieldset>
                         <legend class="form-label-bold">Which of these dates would you like to change?</legend>
                         <label class="block-label" for="radio-1">
-                            <input id="radio-1" type="radio" name="next-page" value="from-date">From date</label>
-
+                            <input id="radio-1" type="radio" name="radio-group" value="from_date">From date</label>
                         <label class="block-label" for="radio-2">
-                            <input id="radio-2" type="radio" name="next-page" value="to-date">To date
+                            <input id="radio-2" type="radio" name="radio-group" value="to_date">To date
                         </label>
 
                         <p class="form-block">or</p>
 
                         <label class="block-label" for="radio-3">
-                            <input id="radio-3" type="radio" name="next-page" value="both_dates">Both dates
+                            <input id="radio-3" type="radio" name="radio-group" value="both_dates">Both dates
                         </label>
                     </fieldset>
 

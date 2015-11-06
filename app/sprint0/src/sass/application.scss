@@ -1,1 +1,10 @@
 @import "app.scss";
+
+
+.form-label-bold {
+  @include bold-19;
+  margin-bottom: 15px;
+  .form-hint {
+    @include core-19;
+  }
+}
