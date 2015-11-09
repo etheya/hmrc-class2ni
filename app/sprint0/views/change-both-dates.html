@@ -14,17 +14,58 @@
 
                 <p class="lede">Change your periods of Class 2 liability for the previous tax year, and recalculate the amount that is payable.</p>
 
+
+                    <p>Your current start date is <span class="heading-small">6th April 2015</span>
+                    <br />Your current end date is <span class="heading-small">18th July 2015</span></p>
+
+
+
                 <div class="panel-indent panel-indent-info space">
-                    <p>Your current start date is <span class="heading-small">6th April 2014</span>
-                    <br />Your current end date is <span class="heading-small">18th June 2014</span>
-                    <br /><span class="font-xsmall">Any changes you make to your end date will default to the following Monday.</p>
+                <p>You can:</p>
+                <ul class="list-bullet">
+                    <li>change your start date to a Sunday</li>
+                    <li>change your start date to any other day, but it will default to the preceding Sunday.</ul>
+                </li>
                 </div>
 
 
                 <form>
 
                     <fieldset class="space">
-                        <legend class="form-label-bold">New start date for your class 2 liability</legend>
+                        <legend class="form-label-bold">Add a new start date for your Class 2 liability</legend>
+                        <div class="form-date">
+                            <p class="form-hint">For example, 31 3 1980</p>
+                            <div class="form-group form-group-day">
+                              <label for="dob-day">Day</label>
+                              <input class="form-control" id="dob-day" name="dob-day" type="number" pattern="[0-9]*" min="0" max="31">
+                            </div>
+                            <div class="form-group form-group-month">
+                              <label for="dob-month">Month</label>
+                              <input class="form-control" id="dob-month" name="dob-month" type="number" pattern="[0-9]*" min="0" max="12">
+                            </div>
+                            <div class="form-group form-group-year">
+                              <label for="dob-year">Year</label>
+                              <input class="form-control" id="dob-year" name="dob-year" type="number" pattern="[0-9]*" min="0" max="2014">
+                            </div>
+                        </div>
+                    </fieldset>
+
+
+
+
+
+                  <div class="panel-indent space">
+                <p>You can:</p>
+                <ul class="list-bullet">
+                    <li>change your end date to a Saturday</li>
+                    <li>change your end date to any other day, but it will default to the following Saturday</li>
+                </li>
+                </div>
+
+
+
+                    <fieldset class="space">
+                        <legend class="form-label-bold">Add a new end date for your Class 2 liability</legend>
                         <div class="form-date">
                             <p class="form-hint">For example, 31 3 1980</p>
                             <div class="form-group form-group-day">
@@ -43,8 +84,8 @@
                     </fieldset>
 
                     <div class="form-group>">
-                        <input class="button" type="submit" value="Continue">
-                        {{! <a class="button" href="/sprint0/review.html" role="button">Continue</a> }}
+                        {{! <input class="button" type="submit" value="Continue"> }}
+                        <a class="button" href="#" role="button">Continue</a>
                     </div>
                   </form>
 
