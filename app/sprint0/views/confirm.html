@@ -10,39 +10,49 @@
 
             <div class="grid-row">
                 <div class="column-two-thirds">
-                    <h1 class="heading-xlarge info-display">Changes received</h1>
+                    <h1 class="heading-xlarge info-display"></h1>
 
 
                     <div class="confirmation">
-                        <p>Your change for the dates of Class 2 liability have been accepted.</p>
-
-                        <h2 class="heading-medium">Your updated period of liability is:</h2>
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th width="35%">Start date</th>
-                                    <th width="35%">End date</th>
-
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>6 April 2015</td>
-                                    <td>18 July 2015</td>
-                                </tr>
-                            </tbody>
-                        </table>
-
-
-              <div class="amounts">
-                    <p><span class="bold-xlarge" style="color: #2B8CC4"></style>£128.80</span>
-                    <br />{{! is your current Class 2 liability for the }} <span class="heading-small">Tax year 6 April 2015 to 5 April 2016</span> </p>
-                </div>
-                <p>You can view and change your periods of liability for the previous tax year and recalculate the amount you need to pay.</p>
-
-
-
+                        <p class="heading-xlarge"><img src="public/images/icons/icon-pointer.png" >Changes received</p>
                     </div>
+
+
+                    {{! <p><span class="bold-xlarge" style="color: #2B8CC4"></style>£128.80</span>
+                    <br />is your current Class 2 liability for the <span class="heading-small">Tax year 6 April 2015 to 5 April 2016</span> </p>
+ }}
+
+                    <h2 class="heading-medium">Your revised liability</h2>
+                        <div class="amounts">
+                    <p><span class="bold-xlarge" style="color: #2B8CC4"></style>£128.80</span>
+                    <br />{{! is your current Class 2 liability for the }} <span class="heading-small">Tax year 12 April 2015 to 9 April 2016 (52 weeks)</span> </p>
+                </div>
+
+
+                <h2 class="heading-medium">Your revised periods of liability are:</h2>
+                <table class="space">
+                    <thead>
+                        <tr>
+                            <th width="35%">Start date</th>
+                            <th width="35%">End date</th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>12 April 2015</td>
+                            <td>18 June 2015</td>
+
+                        </tr>
+                        <tr>
+                            <td>16 October 2015</td>
+                            <td>9 April 2016</td>
+
+                        </tr>
+
+                    </tbody>
+                </table>
+
 
 
                     <a class="button applicationButton startapplication" style="background:#005EA5;" href="/sprint0/view.html">+ Make another change</a>
