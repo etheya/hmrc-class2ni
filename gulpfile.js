@@ -26,7 +26,7 @@ gulp.task('clean', function() {
 });
 
 gulp.task('move', function () {
-  return gulp.src('node_modules/govuk_*/**/*.@(js|css|png|gif|jpg|jpeg|ico)')
+  return gulp.src('node_modules/govuk*/**/*.@(js|css|png|gif|jpg|jpeg|ico)')
     .pipe(rename(function (path) {
       path.dirname = path.dirname.replace(/^.*?[\\\/](?:assets)?/, '');
     }))
@@ -73,7 +73,7 @@ gulp.task('sass', function () {
         outputStyle : 'extended',
         includePaths : glob.sync([
           __dirname + '/node_modules/govuk_*/stylesheets',
-          __dirname + '/govuk_elements/**/sass',
+          __dirname + '/node_modules/govuk-elements/**/sass',
           __dirname + '/lib/sass'
         ])
       }))

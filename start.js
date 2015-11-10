@@ -41,21 +41,12 @@ app.set('views', glob.sync([
   __dirname + '/global/template',
 ]));
 
-// as the express.static middleware does not
-// take an array of args, in order to serve the
-// global assets and sprint assets, we need to
-// loop over the glob of dirs
+// serve static global assets
+app.use('/', 
+  express.static(path.join(__dirname, 'global', 'public')));
 
-// TODO: if we manage to include govuk_elements
-// as a dependency, this can be reduced to just
-// share the 'public' dir and a gulp task to
-// move the right files around
-glob.sync([
-  __dirname + '/govuk_elements',
-  __dirname + '/global/public',
-]).map(function (e) {
-  app.use('/', express.static(e));
-});
+app.use('/public/images/icons', 
+  express.static(path.join(__dirname, 'global', 'public', 'images')));
 
 // include the app file from each sub project
 // as sub app mounted at the prefix of the name
