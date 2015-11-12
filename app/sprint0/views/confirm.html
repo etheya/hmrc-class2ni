@@ -14,7 +14,7 @@
 
                     <div class="govuk-box-highlight">
                         <p class="heading-large"><img src="public/images/icons/tick.png" > Date changes received</p>
-                        {{! <p>Need a line here to say something about how this effects your self assessment</p> }}
+                        <p>Need a line here to say something about how this effects your self assessment</p>
 
                     </div>
 
@@ -34,29 +34,31 @@
                                     <td>18 June 2015</td>
 
                                 </tr>
-                                <tr>
+                               {{!  <tr>
                                     <td>16 October 2015</td>
                                     <td>9 April 2016</td>
 
-                                </tr>
+                                </tr> }}
 
                             </tbody>
                         </table>
                     </div>
 
-                    <p>These changes to your dates have also resulted in a re-calculation of your actual Class 2 liability:</p>
+                    <p>These changes to your dates have also resulted in a re-calculation of your actual Class 2 liability to:</p>
 
-                    <div class="panel-indent panel-indent-info space">
-                        <div class="column-half">
+                    <div class="panel-indent panel-indent-info  space">
+
+
+
+
+                            <p><span class="bold-large" style="color: #28a197">£128.80</span>
+                            <br /><span class="heading-small">Tax year 12 April 2015 to 9 April 2016 (52 weeks)</span></p>
+                            <p>from your previous value of £145.60</p>
+
+                        {{! <div class="column-half">
                             <p><span class="font-xsmall">From</span><br /><span class="bold-large" style="color: #6F777B">£145.60</span>
                             <br /><span class="heading-small">Tax year 12 April 2015 to 9 April 2016 (52 weeks)</span></p>
-                        </div>
-
-
-                        <div class="column-half">
-                            <p><span class="font-xsmall">To</span><br /><span class="bold-large" style="color: #28a197">£128.80</span>
-                            <br /><span class="heading-small">Tax year 12 April 2015 to 9 April 2016 (52 weeks)</span></p>
-                        </div>
+                        </div> }}
                     </div>
 
                     {{! <p class="font-xsmall" style="margin-top: 2em">If any of your details are wrong, <a href="#" target="_blank">contact xxxx xxxx (opens in a new window)</a>.</p> }}
