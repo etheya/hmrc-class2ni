@@ -2,6 +2,6 @@
 /public/
 /global/public/
 /views/
-/app/*/public/
+
 npm-debug.log
 .idea/
