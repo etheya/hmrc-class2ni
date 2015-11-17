@@ -11,58 +11,50 @@
             <div class="column-two-thirds">
                 <h1 class="heading-xlarge info-display">Change your start date</h1>
 
-
-                {{! <p class="lede">Change your periods of Class 2 liability for the previous tax year, and recalculate the amount that is payable.</p> }}
-
-
-                    <p>Your current start date is <span class="heading-small">12 April 2015</span></p>
-
+                <p>Your current start date is <span class="heading-small">12 April 2015</span></p>
 
                 <div class="panel-indent panel-indent-info space">
-                <p>You can:</p>
-                <ul class="list-bullet">
-                    <li>change your start date to a Sunday</li>
-                    <li>change your start date to any other day, but it will default to the preceding Sunday.</ul>
-                </li>
+                    <p>You can:</p>
+                    <ul class="list-bullet">
+                        <li>change your start date to a Sunday</li>
+                        <li>change your start date to any other day, but it will default to the preceding Sunday.</li>
+                    </ul>
                 </div>
 
-
-                <form>
-
+                <form method="post">
                     <fieldset class="space">
+
                         <legend class="form-label-bold">Change your start date for your Class 2 liability</legend>
+
                         <div class="form-date">
                             <p class="form-hint">For example, 31 3 2015</p>
                             <div class="form-group form-group-day">
-                              <label for="dob-day">Day</label>
-                              <input autocomplete="off" class="form-control" id="dob-day" name="dob-day" type="number"  pattern="[0-9]*" min="0" max="31" maxlength="2" required>
+                                <label for="dob-day">Day</label>
+                                <input autocomplete="off" class="form-control" id="dob-day" name="dob-day" type="number"  pattern="[0-9]*" min="0" max="31" maxlength="2" required>
                             </div>
                             <div class="form-group form-group-month">
-                              <label for="dob-month">Month</label>
-                              <input autocomplete="off" class="form-control" id="dob-month" name="dob-month" type="number" maxlength="2" pattern="[0-9]*" min="0" max="12" required>
+                                <label for="dob-month">Month</label>
+                                <input autocomplete="off" class="form-control" id="dob-month" name="dob-month" type="number" maxlength="2" pattern="[0-9]*" min="0" max="12" required>
                             </div>
                             <div class="form-group form-group-year">
-                              <label for="dob-year">Year</label>
-                              <input autocomplete="off" class="form-control" id="dob-year" name="dob-year" type="number" maxlength="4" pattern="[0-9]*" min="0" max="2014" required>
+                                <label for="dob-year">Year</label>
+                                <input autocomplete="off" class="form-control" id="dob-year" name="dob-year" type="number" maxlength="4" pattern="[0-9]*" min="0" max="2014" required>
                             </div>
                         </div>
+
                     </fieldset>
 
-                    {{! <div class="panel-indent panel-indent-info space">
-                        <p class="font-xsmall">Any changes you make to your start date will default to the previous Monday.</p>
-                    </div> }}
                     <div class="form-group>">
+                        <input type="hidden" name="next-page" value="review-start">
                         <input class="button" type="submit" value="Continue">
-                        {{! <a class="button" href="/sprint0/review-start.html" role="button">Continue</a> }}
                     </div>
-                  </form>
+                </form>
 
                 <a href="javascript:history.go(-1)" class="link-back">Back</a>
 
             </div>
         </div>
     </main>
-
 
 {{/main}}
 
