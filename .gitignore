@@ -1,6 +1,8 @@
 /node_modules/
 /public/
 /global/public/
+/global/admin/public/
+/global/template/
 /views/
 
 npm-debug.log

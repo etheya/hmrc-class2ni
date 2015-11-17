@@ -5,11 +5,34 @@ var express = require('express'),
   path = require('path'),
   glob = require('glob-all'),
   hjs = require('hjs'),
+  auth = require('basic-auth-connect'),
+
+  username = process.env.USERNAME,
+  password = process.env.PASSWORD,
 
   app = express();
 
+// TODO: https://github.com/wolfendale/prototype_kit/issues/2
+app.locals.partials = crunchTemplates([
+  __dirname + '/global/views',
+  __dirname + '/global/template',
+]);
+
+app.locals.assetPath = '/';
+app.locals.localAssets = '/';
+app.locals.isDev = app.get('env') === 'development';
+
 app.use(favicon(
   path.join(__dirname, 'global', 'public', 'images', 'favicon.ico')));
+
+// Password protection for Heroku
+if (!app.locals.isDev) {
+  if (!username || !password) {
+    console.log('A username and password must be set for Heroku');
+    process.exit(1);
+  }
+  app.use(auth(process.env.USERNAME, process.env.PASSWORD));
+}
 
 app.use(bodyParser.urlencoded({ extended : true }));
 
@@ -22,16 +45,6 @@ function crunchTemplates(viewdirs) {
     return m;
   }, {});
 }
-
-// TODO: https://github.com/wolfendale/prototype_kit/issues/2
-app.locals.partials = crunchTemplates([
-  __dirname + '/global/views',
-  __dirname + '/global/template',
-]);
-
-app.locals.assetPath = '/';
-app.locals.localAssets = '/';
-app.locals.isDev = app.get('env') === 'development';
 
 app.engine('html', hjs.__express);
 app.set('view engine', 'html');
