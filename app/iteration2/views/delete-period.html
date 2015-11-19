@@ -1,0 +1,57 @@
+{{<layout}}
+
+{{$pageTitle}}
+    National Insurance Class 2 Reform
+{{/pageTitle}}
+
+{{$main}}
+
+    <main id="content" role="main">
+        <div class="grid-row">
+            <div class="column-two-thirds">
+                <h1 class="heading-xlarge info-display">Remove period of liability</h1>
+
+                <p>You have requested to remove the following period of liability:</p>
+                <table class="space">
+                    <thead>
+                        <tr>
+                            <th width="35%">Start date</th>
+                            <th width="35%">End date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>12 April 2015</td>
+                            <td>18 July 2015</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="panel-indent space">
+                    Some wording to go in here explaining the implications
+                </div>
+
+                <form method="post">
+                    <fieldset class="space">
+                        <legend class="form-label-bold">Confirm removal of liability</legend>
+                        <label class="block-label" for="confirm-removal">
+                            <input id="confirm-removal" name="confirm-removal" type="checkbox" value="confirm-removal">I confirm that i would like to remove this period of liability
+                        </label>
+                    </fieldset>
+
+                    <div class="form-group>">
+                        <input type="hidden" name="next-page" value="review-delete">
+                        <input class="button" type="submit" value="Continue">
+                    </div>
+                </form>
+
+                <a href="javascript:history.go(-1)" class="link-back">Back</a>
+
+            </div>
+        </div>
+    </main>
+
+
+{{/main}}
+
+{{/layout}}
