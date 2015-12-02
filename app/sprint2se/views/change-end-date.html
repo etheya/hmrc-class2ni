@@ -1,0 +1,64 @@
+{{<layout}}
+
+{{$pageTitle}}
+    Change end date
+{{/pageTitle}}
+
+{{$main}}
+
+    <main id="content" role="main">
+        <div class="grid-row">
+            <div class="column-two-thirds">
+                <h1 class="heading-xlarge info-display">Change end date</h1>
+
+                <p>Your current end date is <span class="heading-small">18 July 2015</span>
+
+                <p>HMRC uses Sundays for the beginning of the week and Saturdays for the end.</p>
+
+                <div class="panel-indent space">
+                    <p>You can:</p>
+                    <ul class="list-bullet">
+                        <li>change your end date to a Saturday</li>
+                        <li>change your end date to any other day, but it will default to the following Saturday</li>
+                        <li>recalculate how much Class 2 National Insurance you have to pay</li>
+                    </ul>
+                </div>
+
+                <form method="post">
+                    <fieldset class="space">
+                        <legend class="form-label-bold">Change your end date for self-employment</legend>
+                        <div class="form-date">
+                            <p class="form-hint">For example, 31 3 2015</p>
+                            <div class="form-group form-group-day">
+                              <label for="end-day">Day</label>
+                              <input autocomplete="off" class="form-control" id="end-day" name="end-day" type="number"  pattern="[0-9]*" min="1" max="31" maxlength="2" required>
+                            </div>
+                            <div class="form-group form-group-month">
+                              <label for="end-month">Month</label>
+                              <input autocomplete="off" class="form-control" id="end-month" name="end-month" type="number" maxlength="2" pattern="[0-9]*" min="1" max="12" required>
+                            </div>
+                            <div class="form-group form-group-year">
+                              <label for="end-year">Year</label>
+                              <input autocomplete="off" class="form-control" id="end-year" name="end-year" type="number" maxlength="4" pattern="[0-9]*" min="2015" max="2016" required>
+                            </div>
+                        </div>
+                    </fieldset>
+
+                    <div class="form-group>">
+                        <input type="hidden" name="next-page" value="review-end">
+                        <input class="button" type="submit" value="Continue">
+
+                        {{! <a class="button" href="/sprint0/review-end.html" role="button">Continue</a> }}
+                    </div>
+                  </form>
+
+                <a href="javascript:history.go(-1)" class="link-back">Back</a>
+
+            </div>
+        </div>
+    </main>
+
+
+{{/main}}
+
+{{/layout}}

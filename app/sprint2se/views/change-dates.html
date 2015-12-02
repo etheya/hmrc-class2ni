@@ -1,0 +1,65 @@
+{{<layout}}
+
+{{$pageTitle}}
+	Change your liability dates
+{{/pageTitle}}
+
+{{$main}}
+
+    <main id="content" role="main">
+        <div class="grid-row">
+            <div class="column-two-thirds">
+                <h1 class="heading-xlarge info-display">Change your self-employment dates</h1>
+
+                <p>You want to change one or more date and recalculate how much Class 2 National Insurance you have to pay.</p>
+
+                <div class="panel-indent space">
+                    <table>
+                        <tbody>
+                            <tr>
+                                <th width="30%">Start date</th>
+                                <td width="">12 April 2015</td>
+                            </tr>
+                            <tr>
+                                <th>End date</th>
+                                <td>18 July 2015</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <form method="post">
+                    <fieldset>
+                        <legend class="form-label-bold">Which of these dates do you want to change?</legend>
+                        <label class="block-label" for="radio-1">
+                            <input id="radio-1" type="radio" name="next-page" value="change-start-date">Start date</label>
+
+                        <label class="block-label" for="radio-2">
+                            <input id="radio-2" type="radio" name="next-page" value="change-end-date">End date
+                        </label>
+
+                        <p class="form-block">or</p>
+
+                        <label class="block-label" for="radio-3">
+                            <input id="radio-3" type="radio" name="next-page" value="change-both-dates">Both dates
+                        </label>
+                    </fieldset>
+
+                    <p>&nbsp;</p>
+
+                    <div class="form-group>">
+                        <input class="button" type="submit" value="Continue">
+                    </div>
+                </form>
+
+
+                <a href="javascript:history.go(-1)" class="link-back">Back</a>
+
+            </div>
+        </div>
+    </main>
+
+
+{{/main}}
+
+{{/layout}}
