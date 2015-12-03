@@ -27,7 +27,8 @@
                             <tbody>
                                 <tr>
                                     <td>8 May 2015</td>
-                                    <td>24 September 2015</td>
+                                    <td><span id="dateResultSun"></span>
+                                <span id="dateResult"></span></td>
                                 </tr>
                                {{! <tr>
                                     <td>16 October 2015</td>
@@ -63,6 +64,45 @@
 
     </main>
 
+
+
+<script type="text/javascript">
+function startDate() {
+
+        alert("day is " + localStorage.getItem("startDay"));
+        alert("month is " + localStorage.getItem("startMonth"));
+        alert("year is " + localStorage.getItem("startYear"));
+
+               var today = new Date();
+               var day = localStorage.getItem('startDay');
+               var month = localStorage.getItem('startMonth');
+               var year = localStorage.getItem('startYear');
+               var date = new Date(year, month-1, day);
+               var monthname=new Array("January","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","November","Dec")
+               var sundayOfWeek = new Date(date.getFullYear(), date.getMonth(), date.getDate() - date.getDay());
+
+
+
+            if (date.getDay() === 0)
+                  {
+                     document.getElementById("dateResult").innerHTML = date.getDate() +" "+ monthname[(date.getMonth())]+" "+date.getFullYear();
+                    /* document.getElementById("dateResult2").innerHTML = date.getDate() +" "+ monthname[(date.getMonth())]+" "+date.getFullYear();*/
+                    /* document.getElementById("notSundayDate").style.display = "none";*/
+
+                  }
+              else if (date.getDay() !=0)
+                  {
+
+                    document.getElementById("dateResultSun").innerHTML = sundayOfWeek.getDate() +" "+ monthname[(sundayOfWeek.getMonth())]+" "+sundayOfWeek.getFullYear();
+                   /*document.getElementById("dateResultSun2").innerHTML = sundayOfWeek.getDate() +" "+ monthname[(sundayOfWeek.getMonth())]+" "+sundayOfWeek.getFullYear();*/
+                     /* document.getElementById("sundayDate").style.display = "none";*/
+                  }
+
+           }
+
+          window.onload=startDate();
+
+       </script>
 {{/main}}
 
 {{/layout}}
