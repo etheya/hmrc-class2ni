@@ -6,6 +6,7 @@ var express = require('express'),
   glob = require('glob-all'),
   hjs = require('hjs'),
   auth = require('basic-auth-connect'),
+  session = require('express-session'),
 
   username = process.env.USERNAME,
   password = process.env.PASSWORD,
@@ -34,6 +35,10 @@ if (!app.locals.isDev) {
   app.use(auth(process.env.USERNAME, process.env.PASSWORD));
 }
 
+app.use(session({
+  secret: 'womble'
+}));
+
 app.use(bodyParser.urlencoded({ extended : true }));
 
 function crunchTemplates(viewdirs) {
@@ -55,10 +60,10 @@ app.set('views', glob.sync([
 ]));
 
 // serve static global assets
-app.use('/', 
+app.use('/',
   express.static(path.join(__dirname, 'global', 'public')));
 
-app.use('/public/images/icons', 
+app.use('/public/images/icons',
   express.static(path.join(__dirname, 'global', 'public', 'images')));
 
 // include the app file from each sub project
