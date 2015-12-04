@@ -1,0 +1,63 @@
+{{<layout}}
+
+{{$pageTitle}}
+	Change your start date
+{{/pageTitle}}
+
+{{$main}}
+
+    <main id="content" role="main">
+        <div class="grid-row">
+            <div class="column-two-thirds">
+                <h1 class="heading-xlarge info-display">Change your start date</h1>
+
+                <p>Your current period start date is <span class="heading-small">13 April 2014</span></p>
+
+                <p>HMRC uses Sundays for the beginning of the week and Saturdays for the end.</p>
+                <div class="panel-indent space">
+                    <p>You can:</p>
+                    <ul class="list-bullet">
+                        <li>change your start date to a Sunday</li>
+                        <li>change your start date to any other day, but it will default to the previous Sunday</li>
+                        <li>recalculate how much Class 2 National Insurance you have to pay</li>
+                    </ul>
+                </div>
+
+                <form method="post">
+                    <fieldset class="space">
+
+                        <legend class="form-label-bold">Change your start date</legend>
+
+                        <div class="form-date">
+                            <p class="form-hint">For example, 31 3 2015</p>
+                            <div class="form-group form-group-day">
+                                <label for="startDay">Day</label>
+                                <input autocomplete="off" class="form-control" id="startDay" name="startDay" type="number"  pattern="[0-9]*" min="1" max="31" maxlength="2" required>
+                            </div>
+                            <div class="form-group form-group-month">
+                                <label for="startMonth">Month</label>
+                                <input autocomplete="off" class="form-control" id="startMonth" name="startMonth" type="number" maxlength="2" pattern="[0-9]*" min="1" max="12" required>
+                            </div>
+                            <div class="form-group form-group-year">
+                                <label for="startYear">Year</label>
+                                <input autocomplete="off" class="form-control" id="startYear" name="startYear" type="number" maxlength="4" pattern="[0-9]*" min="2014" max="2015" required>
+                            </div>
+                        </div>
+
+                    </fieldset>
+
+                    <div class="form-group>">
+                        <input type="hidden" name="next-page" value="review-start">
+                        <input class="button" type="submit" value="Continue">
+                    </div>
+                </form>
+
+                <a href="javascript:history.go(-1)" class="link-back">Back</a>
+
+            </div>
+        </div>
+    </main>
+
+{{/main}}
+
+{{/layout}}

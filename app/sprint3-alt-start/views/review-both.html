@@ -1,0 +1,83 @@
+{{<layout}}
+
+{{$pageTitle}}
+	Review your changes
+{{/pageTitle}}
+
+{{$main}}
+
+    <main id="content" role="main">
+
+            <div class="grid-row">
+                <div class="column-two-thirds">
+                    <h1 class="heading-xlarge info-display">Review your changes</h1>
+                    <p>You want to change your start and end date.</p>
+
+                    <table class="space">
+                        <thead>
+                            <tr>
+                                <th width="35%">Current start date</th>
+                                <th width="35%">New start date</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>13 April 2014</td>
+                                <td>{{inputStartDate}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div class="panel-indent space">
+                        <p>The date you want to change is not a Sunday. Your new start date will default to the previous Sunday.</p>
+                        <span class="heading-medium">{{startDate}}</span>
+                    </div>
+
+                    <table class="space">
+                        <thead>
+                            <tr>
+                                <th width="35%">Current end date</th>
+                                <th width="35%">New end date</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>19 July 2014</td>
+                                <td>{{inputEndDate}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div class="panel-indent space">
+                        <p>The date you want to change is not a Saturday. Your new end date will default to the following Saturday.</p>
+                        <span class="heading-medium">{{endDate}}</span>
+                    </div>
+
+                    <p>The amount of Class 2 National Insurance you need to pay will be recalculated on submission.</p>
+
+                    <a class="button grey-button" href="view">Cancel</a>
+
+                    <div class="form-group">
+                        <a class="button" href="confirm-both">Confirm and submit</a>
+                    </div>
+
+                    <p><a href="javascript:history.go(-1)" class="link-back">Back</a></p>
+
+                </div>
+            </div>
+
+        </main>
+
+
+
+
+
+    </div>
+
+
+</main>
+
+
+{{/main}}
+
+{{/layout}}

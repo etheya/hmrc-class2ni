@@ -21,9 +21,9 @@ app.get('/review-start', function (req, res) {
     });
 });
 
-app.get('/confirm', function (req, res) {
+app.get('/confirm-start', function (req, res) {
     var date = moment(req.session.startYear + '-' + req.session.startMonth + '-' + req.session.startDay);
-    res.render('confirm', {
+    res.render('confirm-start', {
         startDate: date.day(0).format(format)
     });
 });
@@ -44,14 +44,14 @@ app.get('/review-end', function (req, res) {
     var date = moment(req.session.endYear + '-' + req.session.endMonth + '-' + req.session.endDay);
     res.render('review-end', {
         inputDate: date.format(format),
-        endDate: date.day(6).format(format)
+        endDate: date.day(-1).format(format)
     });
 });
 
 app.get('/confirm-end', function (req, res) {
     var date = moment(req.session.endYear + '-' + req.session.endMonth + '-' + req.session.endDay);
     res.render('confirm-end', {
-        endDate: date.day(6).format(format)
+        endDate: date.day(-1).format(format)
     });
 });
 
