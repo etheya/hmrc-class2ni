@@ -1,4 +1,6 @@
 var app = require('../../lib/subapp.js')(__dirname);
+var moment = require('moment');
+var format = 'Do MMMM YYYY';
 
 app.get('/', function (req, res) {
   res.render('index');
@@ -12,61 +14,81 @@ app.post('/change-start-date', function (req, res) {
 });
 
 app.get('/review-start', function (req, res) {
-    var months = ["January","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","November","Dec"];
-    var date = new Date(req.session.startYear, req.session.startMonth - 1, req.session.startDay);
+    var date = moment(req.session.startYear + '-' + req.session.startMonth + '-' + req.session.startDay);
     res.render('review-start', {
-        inputDate: {
-            day: req.session.startDay,
-            month: months[req.session.startMonth - 1],
-            year: req.session.startYear
-        }
+        inputDate: date.format(format),
+        startDate: date.day(0).format(format)
     });
 });
 
 app.get('/confirm', function (req, res) {
-    var months = ["January","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","November","Dec"];
-    var date = new Date(req.session.startYear, req.session.startMonth - 1, req.session.startDay);
+    var date = moment(req.session.startYear + '-' + req.session.startMonth + '-' + req.session.startDay);
     res.render('confirm', {
-        inputDate: {
-            day: req.session.startDay,
-            month: months[req.session.startMonth - 1],
-            year: req.session.startYear
-        }
+        startDate: date.day(0).format(format)
     });
 });
 
 
 
+
+
 app.post('/change-end-date', function (req, res) {
-    req.session.startDay = req.body.startDay;
-    req.session.startMonth = req.body.startMonth;
-    req.session.startYear = req.body.startYear;
+    req.session.endDay = req.body.endDay;
+    req.session.endMonth = req.body.endMonth;
+    req.session.endYear = req.body.endYear;
     res.redirect(req.body['next-page']);
 });
 
 
 app.get('/review-end', function (req, res) {
-    var months = ["January","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","November","Dec"];
-    var date = new Date(req.session.startYear, req.session.startMonth - 1, req.session.startDay);
+    var date = moment(req.session.endYear + '-' + req.session.endMonth + '-' + req.session.endDay);
     res.render('review-end', {
-        inputDate: {
-            day: req.session.startDay,
-            month: months[req.session.startMonth - 1],
-            year: req.session.startYear
-        }
+        inputDate: date.format(format),
+        endDate: date.day(-1).format(format)
     });
 });
 
 app.get('/confirm-end', function (req, res) {
-    var months = ["January","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","November","Dec"];
-    var date = new Date(req.session.startYear, req.session.startMonth - 1, req.session.startDay);
+    var date = moment(req.session.endYear + '-' + req.session.endMonth + '-' + req.session.endDay);
     res.render('confirm-end', {
-        inputDate: {
-            day: req.session.startDay,
-            month: months[req.session.startMonth - 1],
-            year: req.session.startYear
-        }
+        endDate: date.day(-1).format(format)
     });
 });
+
+
+
+app.post('/change-both-dates', function (req, res) {
+    req.session.startDay = req.body.startDay;
+    req.session.startMonth = req.body.startMonth;
+    req.session.startYear = req.body.startYear;
+    req.session.endDay = req.body.endDay;
+    req.session.endMonth = req.body.endMonth;
+    req.session.endYear = req.body.endYear;
+    res.redirect(req.body['next-page']);
+});
+
+app.get('/review-both', function (req, res) {
+    var fdate = moment(req.session.endYear + '-' + req.session.endMonth + '-' + req.session.endDay);
+    var date = moment(req.session.startYear + '-' + req.session.startMonth + '-' + req.session.startDay);
+    res.render('review-both', {
+        inputStartDate: date.format(format),
+        inputEndDate: fdate.format(format),
+        endDate: fdate.day(-1).format(format),
+        startDate: date.day(0).format(format)
+    });
+});
+
+app.get('/confirm-both', function (req, res) {
+    var fdate = moment(req.session.endYear + '-' + req.session.endMonth + '-' + req.session.endDay);
+    var date = moment(req.session.startYear + '-' + req.session.startMonth + '-' + req.session.startDay);
+    res.render('confirm-both', {
+        inputStartDate: date.format(format),
+        inputEndDate: fdate.format(format),
+        endDate: fdate.day(-1).format(format),
+        startDate: date.day(0).format(format)
+    });
+});
+
+
 
 module.exports = app;
