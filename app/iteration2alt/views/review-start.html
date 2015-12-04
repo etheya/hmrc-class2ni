@@ -23,9 +23,9 @@
                         <tbody>
                             <tr>
                                 <td>12 April 2015</td>
-                                <td><span id="dateResultSun"></span>
-                                <span id="dateResult"></span></td>
-
+                                <td>
+                                  {{inputDate}}
+                                </td>
                             </tr>
                         </tbody>
                     </table>
@@ -33,8 +33,8 @@
                     <div class="panel-indent space">
                         <p>The date you want to change is not a Sunday. Your new start date will default to the following Sunday.</p>
                         <p>Your new start date will be:</p>
-                        <span id="dateResult" class="heading-medium"></span>
-                        <span id="dateResultSun" class="heading-medium"></span>
+                        <span class="heading-medium">{{startDate}}</span>
+
 
                     </div>
 
@@ -42,7 +42,7 @@
 
                     <a class="button grey-button" href="view.html">Cancel</a>
                     <div class="form-group">
-                        <a class="button" href="confirm.html">Confirm and submit</a>
+                        <a class="button" href="confirm">Confirm and submit</a>
                     </div>
 
                     <p><a href="javascript:history.go(-1)" class="link-back">Back</a></p>
@@ -60,46 +60,6 @@
 
 
 </main>
-
-
-
-<script type="text/javascript">
-function startDate() {
-
-        alert("day is " + localStorage.getItem("startDay"));
-        alert("month is " + localStorage.getItem("startMonth"));
-        alert("year is " + localStorage.getItem("startYear"));
-
-               var today = new Date();
-               var day = localStorage.getItem('startDay');
-               var month = localStorage.getItem('startMonth');
-               var year = localStorage.getItem('startYear');
-               var date = new Date(year, month-1, day);
-               var monthname=new Array("January","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","November","Dec")
-               var sundayOfWeek = new Date(date.getFullYear(), date.getMonth(), date.getDate() - date.getDay());
-
-
-
-            if (date.getDay() === 0)
-                  {
-                     document.getElementById("dateResult").innerHTML = date.getDate() +" "+ monthname[(date.getMonth())]+" "+date.getFullYear();
-                    /* document.getElementById("dateResult2").innerHTML = date.getDate() +" "+ monthname[(date.getMonth())]+" "+date.getFullYear();*/
-                    /* document.getElementById("notSundayDate").style.display = "none";*/
-
-                  }
-              else if (date.getDay() !=0)
-                  {
-
-                    document.getElementById("dateResultSun").innerHTML = sundayOfWeek.getDate() +" "+ monthname[(sundayOfWeek.getMonth())]+" "+sundayOfWeek.getFullYear();
-                   /*document.getElementById("dateResultSun2").innerHTML = sundayOfWeek.getDate() +" "+ monthname[(sundayOfWeek.getMonth())]+" "+sundayOfWeek.getFullYear();*/
-                     /* document.getElementById("sundayDate").style.display = "none";*/
-                  }
-
-           }
-
-          window.onload=startDate();
-
-       </script>
 
 {{/main}}
 
