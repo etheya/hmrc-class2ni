@@ -1,54 +1,55 @@
 {{<layout}}
 
 {{$pageTitle}}
-    Class 2 National Insurance
+	HMRC Self Assessment
 {{/pageTitle}}
 
 {{$main}}
 
-    <main id="content" role="main">
-
-            <div class="grid-row">
-                <div class="column-two-thirds">
-                    <h1 class="heading-xlarge info-display">Paying your Class 2 National Insurance for self-employment</h1>
-                    <p class="lede">You have to pay Class 2 National Insurance when in self-employment. Class 2 contributions are £2.75 a week for the tax year 2014 to 2015 and are collected through your Self Assessment return.</p>
-
-                    <div class="panel panel-border-narrow space">
-                    <p>Use this service to:</p>
-                    <ul class="list-bullet">
-                        <li>view the periods where you have to pay Class 2 National Insurance</li>
-                        <li>change your dates if any are incorrect</li>
-                        <li>understand how much Class 2 National Insurance you have to pay</li>
-                        <li>recalculate how much you have to pay if you change or delete any periods</li>
-                    </ul>
-                    </div>
-
-                    <p>The online service is also available in <a href="#">Welsh (Cymraeg)</a>.</p>
-
-                    <h2 class="heading-medium">What you need to know</h2>
-                    <ul class="list-bullet space">
-                        <li>any gaps between dates may be because you claimed Employment and Support Allowance (ESA), were working abroad or you stopped and re-started self-employment</li>
-                        <li>you still have to pay Class 2 National Insurance during a temporary break in self-employment if you intend to continue at some point in the future</li>
-                        <li>if you choose to delete a period where you have to pay Class 2 National Insurance, it will be permanently deleted and can't be recovered</li>
-                    </ul>
-
-                    <p class="space">You can make changes <a href="#">outside of the relevant tax year</a>.</p>
-                    <a class="button button-get-started" href="/sprint2sa-start/view.html" role="button">Start</a>
-                </div>
-            </div>
-
-        </main>
-
-
-
-
-
+            <main id="content" role="main">
+<header role="banner" id="sa-header" class="with-proposition grid-row">
+    <div class="column-third">
+        <strong>HM Revenue<br />&amp; Customs</strong>
+     </div>
+    <div class="column-two-third">
+        {{$propositionHeader}}{{/propositionHeader}}
     </div>
+</header>
+<div class="grid-row">
+    <h1 class="heading-xlarge">Self-Assessment</h1>
+</div>
 
+<div class="grid-row">
+    <h2 class="heading-large">Class 2 NICs</h2>
+    <p>If your total profits for 2014-15 are less than £5965 you may want to pay Class 2 NICs voluntarily to protect your entitlement to State Pension and certain benefits. Before you decide please check help to find out how not paying may affect you. Select Yes if you want to pay Class 2 NICs voluntarily.</p>
+    <form class="space">
+    <fieldset class="inline">
+        <p>Do you want to pay Class 2 NIC voluntarily?</p>
+      <legend class="visuallyhidden">Do you want to pay Class 2 NIC voluntarily?</legend>
+
+      <label class="block-label" for="radio-inline-1">
+        <input id="radio-inline-1" type="radio" name="radio-inline-group" value="Yes" disabled="disabled">
+        Yes
+      </label>
+      <label class="block-label" for="radio-inline-2">
+        <input id="radio-inline-2" type="radio" name="radio-inline-group" value="No" disabled="disabled" checked="true">
+        No
+      </label>
+
+    </fieldset>
+  </form>
+    <p>The amount you have to pay is shown below. You can <a href="/sprint2sa-start/start-revised.html">make changes</a> to any dates you started or stopped self employment that you may not have told us about.</p>
+    <div class="amounts space">
+                    <p><span class="bold-xlarge" style="color: #2B8CC4">£112.00</span>
+                    <br> <span class="heading-small">Class 2 National Insurance amount</span> </p>
+                </div>
+    <p>You can refresh the page to recalculate your Class 2 National Insurance through your Personal Tax Account if you changed your start or end dates, deleted a period or stopped being self-employed.</p>
+    <a class="grey-button" href="/sprint2sa-start/sa-refresh-start-date-change.html">Refresh</a>
+</div>
 
 </main>
 
-
+<link href="{{localAssets}}stylesheets/sa.css" media="screen" rel="stylesheet" type="text/css" />
 {{/main}}
 
 {{/layout}}

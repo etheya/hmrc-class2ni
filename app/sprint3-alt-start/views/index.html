@@ -1,77 +1,55 @@
 {{<layout}}
 
 {{$pageTitle}}
-  View your liability
+	HMRC Self Assessment
 {{/pageTitle}}
 
 {{$main}}
 
-    <main id="content" role="main">
-        <div class="grid-row">
-            <div class="column-two-thirds">
-                <h1 class="heading-xlarge info-display">What you have to pay</h1>
-                <div class="amounts">
-                    <p><span class="bold-xlarge" style="color: #2B8CC4">£106.40</span>
-                    <br /><span class="heading-small">Tax year 6 April 2014 to 5 April 2015 (52 weeks)</span> </p>
-                </div>
-                <div class="panel panel-border-narrow space">
-                    <p>Class 2 contributions are £2.75 a week for the tax year 2014 to 2015 and are paid as part of your Self-Assessment.</p>
-                </div>
-
-                <h2 class="heading-medium">What you need to know</h2>
-                    <ul class="list-bullet space">
-                        <li>any gaps between dates may be because you claimed a benefit where you got Employment and Support Allowance (ESA), were working abroad or you stopped and re-started self-employment</li>
-                        <li>you still have to pay Class 2 National Insurance during a temporary break in self-employment if you intend to continue with self-employment</li>
-                        <li>if you choose to delete a period where you have to pay Class 2 National Insurance, it will be permanently deleted and can't be recovered</li>
-                    </ul>
-                <div class="panel panel-border-narrow space">
-                    <p>Changing dates or deleting a period where you have to pay may impact:</p>
-                    <ul class="list-bullet space">
-                        <li>how many qualifying years you have for State Pension</li>
-                        <li>the amount of State Pension you’re likely to get</li>
-                        <li>certain benefits you are entitled to</li>
-                    </ul>
-                </div>
-
-                <h2 class="heading-medium">The periods where you have to pay</h2>
-                <table class="space">
-                    <thead>
-                        <tr>
-                            <th width="30%">Start date</th>
-                            <th width="30%">End date</th>
-                            <th></th>
-                            <th></th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>13 April 2014</td>
-                            <td>19 July 2014</td>
-                            <td><a class="" href="change-dates" style="float: right">Change a date</a></td>
-                            <td><a class="" href="delete-period" style="float: right">Delete period</a></td>
-                        </tr>
-                        <tr>
-                            <td>19 October 2014</td>
-                            <td>4 April 2015</td>
-                            <td><a class="" href="change-dates" style="float: right" alt="Change dates">Change a date</a></td>
-                            <td><a class="" href="delete-period" style="float: right" alt="Delete this period">Delete period</a></td>
-                        </tr>
-
-                    </tbody>
-                </table>
-
-                <a class="grey-button" href="#">Return to Self-Assessment</a>
-
-
-            </div>
-
-
+            <main id="content" role="main">
+<header role="banner" id="sa-header" class="with-proposition grid-row">
+    <div class="column-third">
+        <strong>HM Revenue<br />&amp; Customs</strong>
+     </div>
+    <div class="column-two-third">
+        {{$propositionHeader}}{{/propositionHeader}}
     </div>
+</header>
+<div class="grid-row">
+    <h1 class="heading-xlarge">Self-Assessment</h1>
+</div>
 
+<div class="grid-row">
+    <h2 class="heading-large">Class 2 NICs</h2>
+    <p>If your total profits for 2014-15 are less than £5965 you may want to pay Class 2 NICs voluntarily to protect your entitlement to State Pension and certain benefits. Before you decide please check help to find out how not paying may affect you. Select Yes if you want to pay Class 2 NICs voluntarily.</p>
+    <form class="space">
+    <fieldset class="inline">
+        <p>Do you want to pay Class 2 NIC voluntarily?</p>
+      <legend class="visuallyhidden">Do you want to pay Class 2 NIC voluntarily?</legend>
+
+      <label class="block-label" for="radio-inline-1">
+        <input id="radio-inline-1" type="radio" name="radio-inline-group" value="Yes" disabled="disabled">
+        Yes
+      </label>
+      <label class="block-label" for="radio-inline-2">
+        <input id="radio-inline-2" type="radio" name="radio-inline-group" value="No" disabled="disabled" checked="true">
+        No
+      </label>
+
+    </fieldset>
+  </form>
+    <p>The amount you have to pay is shown below. You can <a href="/sprint2sa-start/start-revised.html">make changes</a> to any dates you started or stopped self employment that you may not have told us about.</p>
+    <div class="amounts space">
+                    <p><span class="bold-xlarge" style="color: #2B8CC4">£106.40</span>
+                    <br> <span class="heading-small">Class 2 National Insurance amount</span> </p>
+                </div>
+    <p>You can refresh the page to recalculate your Class 2 National Insurance through your Personal Tax Account if you changed your start or end dates, deleted a period or stopped being self-employed.</p>
+    <a class="grey-button" href="/sprint2sa-start/sa-refresh-start-date-change.html">Refresh</a>
+</div>
 
 </main>
 
-
+<link href="{{localAssets}}stylesheets/sa.css" media="screen" rel="stylesheet" type="text/css" />
 {{/main}}
 
 {{/layout}}
