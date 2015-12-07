@@ -30,8 +30,6 @@ app.get('/confirm-start', function (req, res) {
 
 
 
-
-
 app.post('/change-end-date', function (req, res) {
     req.session.endDay = req.body.endDay;
     req.session.endMonth = req.body.endMonth;

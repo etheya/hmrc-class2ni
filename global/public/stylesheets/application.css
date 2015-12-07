@@ -16,7 +16,7 @@
 @-o-viewport {
   width: device-width; }
 
-.grid-row:after, #global-breadcrumb:after, #content:after, fieldset:after, .form-group:after, .form-block:after, .panel-indent:after {
+.grid-row:after, #global-breadcrumb:after, .notice:after, #content:after, fieldset:after, .form-group:after, .form-block:after, .panel:after {
   content: "";
   display: block;
   clear: both; }
@@ -40,7 +40,7 @@
 @-o-viewport {
   width: device-width; }
 
-.grid-row:after, #global-breadcrumb:after, #content:after, fieldset:after, .form-group:after, .form-block:after, .panel-indent:after {
+.grid-row:after, #global-breadcrumb:after, .notice:after, #content:after, fieldset:after, .form-group:after, .form-block:after, .panel:after {
   content: "";
   display: block;
   clear: both; }
@@ -71,7 +71,7 @@
 @-o-viewport {
   width: device-width; }
 
-.grid-row:after, #global-breadcrumb:after, #content:after, fieldset:after, .form-group:after, .form-block:after, .panel-indent:after {
+.grid-row:after, #global-breadcrumb:after, .notice:after, #content:after, fieldset:after, .form-group:after, .form-block:after, .panel:after {
   content: "";
   display: block;
   clear: both; }
@@ -88,7 +88,7 @@
 @-o-viewport {
   width: device-width; }
 
-.grid-row:after, #global-breadcrumb:after, #content:after, fieldset:after, .form-group:after, .form-block:after, .panel-indent:after {
+.grid-row:after, #global-breadcrumb:after, .notice:after, #content:after, fieldset:after, .form-group:after, .form-block:after, .panel:after {
   content: "";
   display: block;
   clear: both; }
@@ -112,7 +112,7 @@
 @-o-viewport {
   width: device-width; }
 
-.grid-row:after, #global-breadcrumb:after, #content:after, fieldset:after, .form-group:after, .form-block:after, .panel-indent:after {
+.grid-row:after, #global-breadcrumb:after, .notice:after, #content:after, fieldset:after, .form-group:after, .form-block:after, .panel:after {
   content: "";
   display: block;
   clear: both; }
@@ -130,6 +130,11 @@
   background: #dee0e2;
   width: 100%; }
 
+.hidden {
+  display: none;
+  visibility: hidden; }
+
+.visually-hidden,
 .visuallyhidden {
   position: absolute;
   overflow: hidden;
@@ -490,11 +495,6 @@ p {
     top: 50%;
     margin-top: -6px; }
 
-@-moz-document url-prefix() {
-  .link-back::before {
-    border-top: 5px dotted rgba(255, 0, 0, 0);
-    border-bottom: 5px dotted rgba(255, 0, 0, 0); } }
-
 .code {
   color: black;
   text-shadow: 0 1px white;
@@ -526,6 +526,17 @@ hr {
   margin-top: 30px;
   margin-bottom: 30px;
   padding: 0; }
+
+.notice {
+  position: relative; }
+  .notice .icon {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    margin-top: -17px; }
+  .notice strong {
+    padding-left: 65px;
+    margin-left: -15px; }
 
 #content {
   padding-bottom: 30px; }
@@ -580,33 +591,39 @@ hr {
       .phase-banner span {
         vertical-align: baseline; } }
 
-.column-quarter {
+.column-quarter,
+.column-one-quarter {
   padding: 0 15px;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box; }
   @media (min-width: 641px) {
-    .column-quarter {
+    .column-quarter,
+    .column-one-quarter {
       float: left;
       width: 25%; } }
 
-.column-half {
+.column-half,
+.column-one-half {
   padding: 0 15px;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box; }
   @media (min-width: 641px) {
-    .column-half {
+    .column-half,
+    .column-one-half {
       float: left;
       width: 50%; } }
 
-.column-third {
+.column-third,
+.column-one-third {
   padding: 0 15px;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box; }
   @media (min-width: 641px) {
-    .column-third {
+    .column-third,
+    .column-one-third {
       float: left;
       width: 33.33333%; } }
 
@@ -939,10 +956,14 @@ table {
         font-size: 16px;
         line-height: 1.25; } }
 
-ul,
-ol {
+.list {
   list-style-type: none;
-  padding: 0; }
+  padding: 0;
+  margin-top: 5px;
+  margin-bottom: 20px; }
+
+.list li {
+  margin-bottom: 5px; }
 
 .list-bullet {
   list-style-type: disc;
@@ -952,14 +973,8 @@ ol {
   list-style-type: decimal;
   padding-left: 20px; }
 
-.list-bullet,
-.list-number {
-  margin-top: 5px;
-  margin-bottom: 20px; }
-
-.list-bullet li,
-.list-number li {
-  margin-bottom: 5px; }
+.list-links li {
+  margin-bottom: 10px; }
 
 details {
   display: block; }
@@ -979,21 +994,25 @@ details {
     margin-right: .35em;
     font-style: normal; }
 
-.panel-indent {
+.panel {
   clear: both;
-  border-left: 5px solid #bfc1c3;
+  border-left-style: solid;
+  border-color: #bfc1c3;
   padding: 0.78947em;
   margin-bottom: 0.78947em; }
-  .panel-indent :first-child {
+  .panel :first-child {
     margin-top: 0; }
-  .panel-indent :only-child,
-  .panel-indent :last-child {
+  .panel :only-child,
+  .panel :last-child {
     margin-bottom: 0; }
 
-.panel-indent-info {
+.panel-border-wide {
   border-left-width: 10px; }
 
-.form-group .panel-indent {
+.panel-border-narrow {
+  border-left-width: 5px; }
+
+.form-group .panel-border-narrow {
   padding-bottom: 0; }
 
 .button {
@@ -1019,7 +1038,6 @@ details {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  margin: 0 15px 15px 0;
   padding: 0.52632em 0.78947em 0.26316em 0.78947em;
   vertical-align: top; }
   .button:visited {
@@ -1102,6 +1120,7 @@ details {
       background-size: 30px 19px; } }
 
 .icon {
+  display: inline-block;
   background-position: 0 0;
   background-repeat: no-repeat; }
 
@@ -1114,18 +1133,18 @@ details {
       background-image: url("/public/images/icons/icon-calendar-2x.png");
       background-size: 100%; } }
 
-.icon-download {
+.icon-file-download {
   width: 30px;
   height: 39px;
   background-image: url("/public/images/icons/icon-file-download.png"); }
   @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 20 / 10), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
-    .icon-download {
+    .icon-file-download {
       background-image: url("/public/images/icons/icon-file-download-2x.png");
       background-size: 100%; } }
 
 .icon-important {
-  width: 34px;
-  height: 34px;
+  width: 35px;
+  height: 35px;
   background-image: url("/public/images/icons/icon-important.png"); }
   @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 20 / 10), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
     .icon-important {
@@ -1150,20 +1169,9 @@ details {
       background-image: url("/public/images/icons/icon-locator-2x.png");
       background-size: 100%; } }
 
-.icon-search {
-  width: 30px;
-  height: 22px;
-  background-color: #0b0c0c;
-  background-image: url("/public/images/icons/icon-search.png"); }
-  @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 20 / 10), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
-    .icon-search {
-      background-image: url("/public/images/icons/icon-search-2x.png");
-      background-size: 100%; } }
-
 .icon-pointer {
   width: 30px;
   height: 19px;
-  background-color: #0b0c0c;
   background-image: url("/public/images/icons/icon-pointer.png"); }
   @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 20 / 10), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
     .icon-pointer {
@@ -1177,6 +1185,15 @@ details {
   @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 20 / 10), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
     .icon-pointer-black {
       background-image: url("/public/images/icons/icon-pointer-black-2x.png");
+      background-size: 100%; } }
+
+.icon-search {
+  width: 30px;
+  height: 22px;
+  background-image: url("/public/images/icons/icon-search.png"); }
+  @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 20 / 10), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
+    .icon-search {
+      background-image: url("/public/images/icons/icon-search-2x.png");
       background-size: 100%; } }
 
 .icon-step-1 {
@@ -1295,6 +1312,38 @@ details {
     .icon-step-13 {
       background-image: url("/public/images/icons/icon-steps/icon-step-13-2x.png");
       background-size: 100%; } }
+
+.icon-step-14 {
+  width: 23px;
+  height: 23px;
+  background-image: url("/public/images/icons/icon-steps/icon-step-14.png"); }
+  @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 20 / 10), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
+    .icon-step-14 {
+      background-image: url("/public/images/icons/icon-steps/icon-step-14-2x.png");
+      background-size: 100%; } }
+
+.circle {
+  display: inline-block;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  background: #0b0c0c;
+  color: #fff;
+  font-family: "ntatabularnumbers", "nta", Arial, sans-serif;
+  font-size: 12px;
+  font-weight: bold;
+  text-align: center; }
+
+.circle-step {
+  min-width: 24px;
+  min-height: 24px;
+  line-height: 24px; }
+
+.circle-step-large {
+  font-size: 19px;
+  min-width: 38px;
+  min-height: 38px;
+  line-height: 38px; }
 
 .govuk-box-highlight {
   margin: 1em 0 1em 0;
