@@ -1,9 +1,1 @@
 /node_modules/
-/public/
-/global/public/
-/global/admin/public/
-/global/template/
-/views/
-/app/*/public/
-npm-debug.log
-.idea/
