@@ -42,14 +42,14 @@ app.get('/review-end', function (req, res) {
     var date = moment(req.session.endYear + '-' + req.session.endMonth + '-' + req.session.endDay);
     res.render('review-end', {
         inputDate: date.format(format),
-        endDate: date.day(-1).format(format)
+        endDate: date.day(+6).format(format)
     });
 });
 
 app.get('/confirm-end', function (req, res) {
     var date = moment(req.session.endYear + '-' + req.session.endMonth + '-' + req.session.endDay);
     res.render('confirm-end', {
-        endDate: date.day(-1).format(format)
+        endDate: date.day(+6).format(format)
     });
 });
 
@@ -71,7 +71,7 @@ app.get('/review-both', function (req, res) {
     res.render('review-both', {
         inputStartDate: date.format(format),
         inputEndDate: fdate.format(format),
-        endDate: fdate.day(-1).format(format),
+        endDate: fdate.day(+6).format(format),
         startDate: date.day(0).format(format)
     });
 });
@@ -82,7 +82,7 @@ app.get('/confirm-both', function (req, res) {
     res.render('confirm-both', {
         inputStartDate: date.format(format),
         inputEndDate: fdate.format(format),
-        endDate: fdate.day(-1).format(format),
+        endDate: fdate.day(+6).format(format),
         startDate: date.day(0).format(format)
     });
 });
