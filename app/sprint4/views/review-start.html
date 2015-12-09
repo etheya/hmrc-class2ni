@@ -11,36 +11,35 @@
             <div class="grid-row">
                 <div class="column-two-thirds">
                     <h1 class="heading-xlarge info-display">Review your change</h1>
-
-                    <p>You want to change your start date.</p>
                     <table class="space">
                         <thead>
                             <tr>
                                 <th width="35%">Current start date</th>
                                 <th width="35%">New start date</th>
+                                <th></th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
                                 <td>6 April 2014</td>
                                 <td>{{inputDate}}</td>
+                                <td><a href="change-start-date">Change date</a></td>
                             </tr>
                         </tbody>
                     </table>
 
                     <div class="panel panel-border-narrow space">
-                        <p>The date you want to change is not a Sunday. Your new start date will default to the previous Sunday.</p>
+                        <p>We use Sundays as a weekly start date.<br />
+                            If you don't choose a Sunday, your new start date will default to the previous Sunday to record the whole week as a contribution period.</p>
                         <p>Your new start date will be:</p>
                         <span class="heading-medium">{{startDate}}</span>
                     </div>
 
-                    <p class="space">The amount of Class 2 National Insurance you need to pay will be recalculated on submission.</p>
-
-                    <a class="button grey-button" href="view.html">Cancel</a>
+                    <p class="space">Your Class 2 National Insurance contributions will be recalculated on submission.</p>
+                    
                     <div class="form-group">
                         <a class="button" href="confirm-start">Confirm and submit</a>
                     </div>
-
                     <p><a href="javascript:history.go(-1)" class="link-back">Back</a></p>
 
                 </div>
