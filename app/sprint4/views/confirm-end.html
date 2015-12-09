@@ -1,7 +1,7 @@
 {{<layout}}
 
 {{$pageTitle}}
-	Confirm
+	Date change received
 {{/pageTitle}}
 
 {{$main}}
@@ -13,27 +13,10 @@
 
                     <div class="govuk-box-highlight">
                         <h1 class="heading-large"><img src="public/images/icons/tick.png"> Date change received</h1>
+                     <strong class="heading-medium">Your start date has been updated to<br/>{{endDate}}</strong>
                     </div>
 
-                    <p>The period where you have to pay Class 2 National Insurance contributions has been updated.</p>
-                    <div class="panel panel-border-narrow space">
-                        <table class="space">
-                            <thead>
-                                <tr>
-                                    <th width="35%">Start date</th>
-                                    <th width="35%">End date</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>6 April 2014</td>
-                                    <td>{{endDate}}</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-
-                    <p>The amount you have to pay has changed:</p>
+                    <p>Your contributions amount has changed:</p>
 
                     <div class="panel panel-border-narrow space">
                         <div class="column-half">
@@ -44,16 +27,11 @@
                             <p><span class="font-xsmall">To</span><br /><span class="bold-large" style="color: #28a197">£140.00</span>
                             <br /><span class="heading-small">Tax year 2014 to 2015</span></p>
                         </div>
-                    </div>
-                    {{! <p class="font-xsmall" style="margin-top: 2em">If any of your details are wrong, <a href="#" target="_blank">contact xxxx xxxx (opens in a new window)</a>.</p> }}
-                    {{! <a class="button applicationButton startapplication" style="background:#005EA5;" href="/sprint0/view.html">+ Make another change</a> }}
-
-                    <a class="grey-button" href="view.html">+ Make another change</a>
-                    <div class="form-group">
-                        <a class="button" href="/">Finish</a>
-                    </div>
-
                 </div>
+                    <ul class="list list-links">
+                        <li><a href="view.html">Make another change</a></li>
+                        <li><a href="index.html">Return to self-assessment</a></li>
+                    </ul>
 
             </div>
 

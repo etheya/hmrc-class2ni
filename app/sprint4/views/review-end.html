@@ -19,18 +19,21 @@
                             <tr>
                                 <th width="35%">Current end date</th>
                                 <th width="35%">New end date</th>
+                                <th></th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
                                 <td>19 July 2014</td>
                                 <td>{{inputDate}}</td>
+                                <td><a href="change-end-date">Change new end date</a></td>
                             </tr>
                         </tbody>
                     </table>
 
                     <div class="panel panel-border-narrow space">
-                        <p>The date you want to change is not a Saturday. Your new end date will default to the following Saturday.</p>
+                        <p>We use Saturdays as a weekly end date.<br />
+                            If you don't choose a Saturday, your new start date will default to the following Saturday to record the whole week as a contribution period.</p>
                         <p>Your new end date will be:</p>
                         <span class="heading-medium">{{endDate}}</span>
                     </div>
@@ -38,7 +41,6 @@
                     <p>The amount of Class 2 National Insurance you need to pay will be recalculated on submission.</p>
 
 
-                    <a class="button grey-button" href="view">Cancel</a>
                     <div class="form-group">
                         <a class="button" href="confirm-end">Confirm and submit</a>
                     </div>
