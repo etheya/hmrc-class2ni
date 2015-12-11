@@ -1,0 +1,42 @@
+{{<layout}}
+
+{{$pageTitle}}
+	Change your liability dates
+{{/pageTitle}}
+
+{{$main}}
+
+
+        <div class="grid-row">
+            <div class="column-two-thirds">
+                <h1 class="heading-xlarge info-display">Change a date</h1>
+
+                <form method="post" class="space">
+                    <fieldset>
+                        <legend class="form-label-bold">Which of these dates do you want to change?</legend>
+                        <div class="form-group">
+                        <label class="block-label" for="radio-1">
+                            <input id="radio-1" type="radio" name="next-page" value="change-start-date">Start date of 5 October 2014
+                        </label>
+                        <label class="block-label" for="radio-2">
+                            <input id="radio-2" type="radio" name="next-page" value="change-end-date">End date of 4 April 2015
+                        </label>
+                        </div>
+                    </fieldset>
+
+
+                    <div class="form-group">
+                        <input class="button" type="submit" value="Continue">
+                    </div>
+                </form>
+
+
+                <a href="javascript:history.go(-1)" class="link-back">Back</a>
+
+            </div>
+        </div>
+
+
+{{/main}}
+
+{{/layout}}
