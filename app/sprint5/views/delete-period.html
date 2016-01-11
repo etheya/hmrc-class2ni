@@ -9,6 +9,7 @@
 
         <div class="grid-row">
             <div class="column-two-thirds">
+                <a href="javascript:history.go(-1)" class="link-back">Back</a>
                 <h1 class="heading-xlarge info-display">Delete a period</h1>
 
                 <table class="space">
@@ -36,21 +37,11 @@
                 </div>
                 
                 <form method="post">
-                    <fieldset class="space inline">
-                        <legend class="form-label-bold">Do you want to permanently delete this contributions period?</legend>
-                        <label class="block-label" for="radio-1">
-                            <input id="radio-1" type="radio" name="next-page" value="confirm-delete">Yes</label>
-
-                        <label class="block-label" for="radio-2">
-                            <input id="radio-2" type="radio" name="next-page" value="view">No</label>
-                    </fieldset>
-
                     <div class="form-group">
-                        <input class="button" type="submit" value="Continue">
+                        <input class="button" type="submit" value="Permanently delete">
                     </div>
                 </form>
-
-                <a href="javascript:history.go(-1)" class="link-back">Back</a>
+                <a href="view.html" class="link-back">Cancel</a>
 
             </div>
         </div>
