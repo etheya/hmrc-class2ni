@@ -1,4 +1,5 @@
 var express = require('express'),
+  fs = require('fs-extra'),
   favicon = require('serve-favicon'),
   bodyParser = require('body-parser'),
   q = require('q'),
@@ -7,8 +8,6 @@ var express = require('express'),
   hjs = require('hjs'),
   auth = require('basic-auth-connect'),
   session = require('express-session'),
-  // FileStore = require('./lib/filestore')(session),
-  // MemoryStore = session.MemoryStore,
 
   username = process.env.USERNAME,
   password = process.env.PASSWORD,
@@ -47,17 +46,6 @@ if (!app.locals.isDev) {
 app.use(session({
   secret: 'womble'
 }));
-
-// app.use(session({
-//   secret : 'snail',
-//   resave : true,
-//   saveUninitialized : true,
-//   store : (
-//     app.locals.isDev ?
-//     new FileStore :
-//     new MemoryStore
-//   )
-// }));
 
 app.use(bodyParser.urlencoded({ extended : true }));
 
