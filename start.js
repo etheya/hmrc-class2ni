@@ -1,4 +1,5 @@
 var express = require('express'),
+  fs = require('fs-extra'),
   favicon = require('serve-favicon'),
   bodyParser = require('body-parser'),
   q = require('q'),
@@ -69,38 +70,43 @@ app.use('/public/images/icons',
 // include the app file from each sub project
 // as sub app mounted at the prefix of the name
 // of the folder
-glob.sync(__dirname + '/app/**/app.js')
+glob.sync(__dirname + '/app/*')
   .map(function (e) {
+
     var p = './' + path.relative(
       __dirname, e
     ).replace(/\\/g, '/');
-    var name = e.replace(/^.*app(\/.*?)\/.*$/, '$1');
-    var sub = require(p);
-    // if a get request falls through to this
-    // point we check to see if we have a view
-    // that matches the url and render that.
-    // useful if people do not want to declare
-    // routes
-    sub.get('*', function (req, res, next) {
-      try {
-        res.render(req.path.substring(1));
-      } catch (e) {
-        next();
-      }
-    });
-    // this adds a default post to every page
-    // that checks whether the request body
-    // contains a 'next-page' key, if so
-    // we redirect the user to whatever the
-    // value of that key is
-    sub.post('*', function (req, res, next) {
-      if (req.body['next-page']) {
-        res.redirect(name + '/' + req.body['next-page']);
-      } else {
-        next();
-      }
-    });
-    app.use(name, sub);
+
+    var meta = fs.readJsonSync(p + '/meta.json');
+    if (meta.hidden === false || app.locals.isDev) {
+      var name = e.replace(/^.*app(\/.*?)$/, '$1');
+      var sub = require(p + '/app.js');
+      // if a get request falls through to this
+      // point we check to see if we have a view
+      // that matches the url and render that.
+      // useful if people do not want to declare
+      // routes
+      sub.get('*', function (req, res, next) {
+        try {
+          res.render(req.path.substring(1));
+        } catch (e) {
+          next();
+        }
+      });
+      // this adds a default post to every page
+      // that checks whether the request body
+      // contains a 'next-page' key, if so
+      // we redirect the user to whatever the
+      // value of that key is
+      sub.post('*', function (req, res, next) {
+        if (req.body['next-page']) {
+          res.redirect(name + '/' + req.body['next-page']);
+        } else {
+          next();
+        }
+      });
+      app.use(name, sub);
+    }
   });
 
 // mount admin app
