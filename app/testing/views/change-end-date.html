@@ -39,30 +39,58 @@
                 </ul>
 
                 <form method="post" class="space">
-                    <fieldset class="space">
-                        <legend class="form-label-bold">Enter new end date</legend>
-                        <div class="form-date">
+                    <div class="error-summary" role="group" aria-labelledby="error-summary-heading" tabindex="-1">
+
+                      <h1 class="heading-medium error-summary-heading" id="error-summary-heading">
+                        Invalid date
+                      </h1>
+
+                      <ul class="error-summary-list">
+                        <li><a href="#new-end-date">Date entered must be between 6 April 2014 and 11 April 2015</a></li>
+                      </ul>
+                        
+                        <p>If your self-employment ended outside of these dates you can let us know by using form <a href="https://www.gov.uk/government/publications/self-assessment-and-national-insurance-contributions-register-if-youre-a-self-employed-sole-trader-cwf1" target="_blank">CWF1 on gov.uk</a>.</p>
+                    </div>
+                    <div class="error-summary" role="group" aria-labelledby="error-summary-heading" tabindex="-1">
+
+                      <h1 class="heading-medium error-summary-heading" id="error-summary-heading">
+                        Periods overlap
+                      </h1>
+
+                      <ul class="error-summary-list">
+                        <li><a href="#new-end-date">The dates you entered overlap with another period of self-employment</a></li>
+                      </ul>
+
+                        <p>You may need to remove periods of self-employment which are no longer applicable - <a href="view.html">Check your self-employment details.</a></p>
+                    </div>
+                    <div class="form-date form-group error">
+                        <fieldset>
+                        
+                            <legend id="new-end-date" class="form-label-bold">Enter new end date</legend>
                             <p class="form-hint">For example, 31 3 2015</p>
+                            <p class="error-message" id="error-end-date">Enter a date between 6 April 2014 and 11 April 2015</span>
+                            <p class="error-message" id="error-end-date">Enter a date which does not overlap with any other periods</span>
                             <div class="form-group form-group-day">
-                              <label for="endDay">Day</label>
-                              <input autocomplete="off" class="form-control" id="endDay" name="endDay" type="number"  pattern="[0-9]*" min="1" max="31" maxlength="2" required>
+                                <label for="endDay">Day</label>
+                                <input autocomplete="off" class="form-control" id="endDay" name="endDay" type="number"  pattern="[0-9]*" min="1" max="31" maxlength="2" required aria-describedby="error-end-date">
                             </div>
                             <div class="form-group form-group-month">
-                              <label for="endMonth">Month</label>
-                              <input autocomplete="off" class="form-control" id="endMonth" name="endMonth" type="number" maxlength="2" pattern="[0-9]*" min="1" max="12" required>
+                                <label for="endMonth">Month</label>
+                                <input autocomplete="off" class="form-control" id="endMonth" name="endMonth" type="number" maxlength="2" pattern="[0-9]*" min="1" max="12" required>
                             </div>
                             <div class="form-group form-group-year">
-                              <label for="endYear">Year</label>
-                              <input autocomplete="off" class="form-control" id="endYear" name="endYear" type="number" maxlength="4" pattern="[0-9]*" min="2014" max="2015" required>
+                                <label for="endYear">Year</label>
+                                <input autocomplete="off" class="form-control" id="endYear" name="endYear" type="number" maxlength="4" pattern="[0-9]*" min="2014" max="2015" required>
                             </div>
-                        </div>
-                    </fieldset>
+                        </fieldset>
+                    </div>
+
 
                     <div class="form-group>">
                         <input type="hidden" name="next-page" value="review-end">
                         <input class="button" type="submit" value="Continue">
                     </div>
-                  </form>
+                </form>
                 <a href="view.html">Cancel</a>
             </div>
         </div>
