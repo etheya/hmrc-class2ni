@@ -1,0 +1,76 @@
+{{<layout}}
+
+{{$pageTitle}}
+	Change your liability dates
+{{/pageTitle}}
+
+{{$main}}
+
+
+        <div class="grid-row">
+            <div class="column-two-thirds">
+                <a href="javascript:history.go(-1)" class="link-back">Back</a>
+                <h1 class="heading-xlarge info-display">Make a change</h1>
+                
+                <table class="space">
+                    <thead>
+                        <th colspan="2"> Self-employment period</th>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                Continued from<br/>
+                                2013-2014
+                            </td>
+                            <td>
+                                Ended on<br/>
+                                5 July 2014<br/>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <form method="post">
+                    
+                    <div class="form-group">
+                        <fieldset>
+                            <legend class="form-label-bold">What change would you like to make?</legend>
+                            <div class="form-group">
+                            <label class="block-label" for="radio-1">
+                                <input id="radio-1" type="radio" name="next-page" value="change-end-date">Change end date of 5 July 2014
+                            </label>
+                            <label class="block-label" for="radio-2">
+                                <input id="radio-2" type="radio" name="next-page" value="delete-period">Permanently delete this period
+                            </label>
+                            </div>
+                        </fieldset>
+                    </div>
+
+                    <details class="space">
+
+                            <summary><span class="summary">Why can't I change the start date?</span></summary>
+
+                            <div class="panel panel-border-narrow">
+
+                              <p>
+                                Because the start date of this self-employment period is outside of the tax year 2014-2015. If you need to make changes not available here, use form <a href="https://www.gov.uk/government/publications/self-assessment-and-national-insurance-contributions-register-if-youre-a-self-employed-sole-trader-cwf1" target="_blank">CWF1 on gov.uk</a>
+                              </p>
+
+                            </div>
+
+                        </details>
+
+                    <div class="form-group">
+                        <input class="button" type="submit" value="Continue">
+                    </div>
+                </form>
+                <a href="view.html">Cancel</a>
+
+            </div>
+        </div>
+
+
+
+{{/main}}
+
+{{/layout}}
