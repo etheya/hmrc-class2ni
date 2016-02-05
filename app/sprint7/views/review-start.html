@@ -12,25 +12,22 @@
                 <div class="column-two-thirds">
                     <a href="javascript:history.go(-1)" class="link-back">Back</a>
                     <h1 class="heading-xlarge info-display">Review your change</h1>
-
-
-
                     <table class="space">
                         <thead>
                             <tr>
-                                <th width="35%">Current end date</th>
-                                <th width="35%">Requested end date</th>
+                                <th width="35%">Current start date</th>
+                                <th width="35%">Requested start date</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td>7 June 2014</td>
+                                <td>5 October 2014</td>
                                 <td>{{inputDate}}</td>
                             </tr>
                         </tbody>
                     </table>
-
-                        <p>We use Saturdays as the last day of a contribution week.</p>
+                    
+                    <p>We use Sundays as the first day of a contribution week.</p>
                         <details class="space">
 
                             <summary><span class="summary">What's a contribution week?</span></summary>
@@ -48,23 +45,24 @@
                             </div>
 
                         </details>
+                    
                     <div class="panel panel-border-narrow space">
-                        <p>If you haven't chosen a Saturday, your new start date will default to the following Saturday to record a full contribution week.</p>
-                        <p>Your new end date will be:</p>
-                        <span class="heading-medium">{{endDate}}</span>
+                            If you don't choose a Sunday, your new start date will default to the previous Sunday to record the whole week as a contribution period.</p>
+                        <p>Your new start date will be:</p>
+                        <span class="heading-medium">{{startDate}}</span>
                     </div>
 
-                    <p>Your Class 2 National Insurance contributions will be recalculated on submission.</p>
+                    <p class="space">Your Class 2 National Insurance contributions will be recalculated on submission.</p>
 
-
-                    <div class="form-group">
-                        <a class="button" href="confirm-end">Confirm and submit</a>
+                    <div class="form-group" class="space">
+                        <a class="button" href="confirm-start">Confirm and submit</a>
                     </div>
                     <a href="view.html">Cancel</a>
-
                 </div>
-
             </div>
+
+
+
 
 
 {{/main}}
