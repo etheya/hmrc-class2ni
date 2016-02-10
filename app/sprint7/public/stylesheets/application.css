@@ -1725,3 +1725,6 @@ input[type=number] {
 
 .clear {
   clear: both; }
+
+.error-message.hidden {
+  display: none; }

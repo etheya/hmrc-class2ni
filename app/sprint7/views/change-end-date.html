@@ -42,13 +42,35 @@
                 <p><a href="https://www.gov.uk/national-insurance/what-national-insurance-is-for" target="_blank">Find out more on gov.uk.</a></p>
 
                 <form method="post" class="space">
-                    
-                    <div class="form-date form-group">
+                    <div id="invalid-date" class="error-summary hidden" role="group" aria-labelledby="error-summary-heading" tabindex="-1">
+
+                      <h1 class="heading-medium error-summary-heading" id="error-summary-heading">
+                        There is a problem
+                      </h1>
+                      <p>Check you have entered the date correctly</p>
+                      <ul class="error-summary-list">
+                        <li><a href="#new-end-date">You must enter a date between 6 April 2014 and 11 April 2015</a></li>
+                      </ul>
+                        
+                        <p>If your self-employment ended outside of these dates you can let us know by using <a href="https://www.gov.uk/government/publications/self-assessment-and-national-insurance-contributions-register-if-youre-a-self-employed-sole-trader-cwf1" target="_blank">form CWF1 on gov.uk</a>.</p>
+                    </div>
+                    <div id="overlap-date" class="error-summary hidden" role="group" aria-labelledby="error-summary-heading" tabindex="-1">
+
+                      <h1 class="heading-medium error-summary-heading" id="error-summary-heading">
+                        There is a problem
+                      </h1>
+                        <p>Check you have entered the date correctly</p>
+                      <ul class="error-summary-list">
+                        <li><a href="#new-end-date">The date you have entered overlaps with another self-employment period: 5 October 2014 to Ongoing</a></li>
+                      </ul>
+                    </div>
+                    <div id="date-entry" class="form-date form-group">
                         <fieldset>
                         
                             <legend id="new-end-date" class="form-label-bold">Enter new end date</legend>
                             <p class="form-hint">For example, 31 3 2015</p>
-                            
+                            <p class="error-message hidden" id="error-end-date">Enter a date between 6 April 2014 and 11 April 2015</span>
+                            <p class="error-message hidden" id="error-overlap-date">Enter a date that doesn’t overlap with another self-employment period</span>
                             <div class="form-group form-group-day">
                                 <label for="endDay">Day</label>
                                 <input autocomplete="off" class="form-control" id="endDay" name="endDay" type="number"  pattern="[0-9]*" min="1" max="31" maxlength="2" required aria-describedby="error-end-date">
@@ -67,15 +89,67 @@
 
                     <div class="form-group>">
                         <input type="hidden" name="next-page" value="review-end">
-                        <input class="button" type="submit" value="Continue">
+                        <input class="button" id="continue"  value="Continue" type="button">
                     </div>
                 </form>
                 <a href="view.html">Cancel</a>
             </div>
         </div>
 
+<script>
+//within two dates 6-4-2014 / 11-4-2015
+//not within two dates 16-11-2014 / 14-3-2015
 
+document.getElementById("continue").addEventListener("click", newFunction);
+    
+var d = document.getElementById("endDay");
+var m = document.getElementById("endMonth");
+var y = document.getElementById("endYear");
+    
+var dateOne = new Date(2014,3,5);
+var dateTwo = new Date(2015,3,11);
+var dateThree = new Date(2014,10,15);
+var dateFour = new Date(2015,2,13);
+    
+var withinRange;
+var notOverlapping;
+    
+function newFunction() {
+    var dateEntered = new Date(y.value, m.value - 1, d.value);
+    if ( dateEntered <= dateOne || dateEntered > dateTwo ) {
+        $('#error-end-date').removeClass('hidden');
+        $('#date-entry').addClass('error');
+        $('#invalid-date').removeClass('hidden');
+        withinRange = false;
+      
+    } else {
+        $('#error-end-date').addClass('hidden');
+        $('#date-entry').removeClass('error');
+        $('#invalid-date').addClass('hidden');
+        withinRange = true;
+      
+    }
+    if ( dateEntered > dateThree && dateEntered < dateFour ) {
+        $('#error-overlap-date').removeClass('hidden');
+        $('#date-entry').addClass('error');
+        $('#overlap-date').removeClass('hidden');
+        $('#error-end-date').addClass('hidden');
+        $('#invalid-date').addClass('hidden');
+        notOverlapping = false;
 
+    } else {
+        $('#error-overlap-date').addClass('hidden');
+        $('#overlap-date').addClass('hidden');
+        $('#error-end-date').removeClass('hidden');
+        notOverlapping = true;
+    }    
+     if (withinRange == true && notOverlapping == true) {
+        $('#continue').attr('type', 'submit');
+    }
+
+}
+
+</script>
 {{/main}}
 
 {{/layout}}
