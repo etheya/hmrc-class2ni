@@ -1,0 +1,49 @@
+{{<layout}}
+
+{{$pageTitle}}
+	Date change received
+{{/pageTitle}}
+
+{{$main}}
+
+
+
+    <div class="grid-row">
+        <div class="column-two-thirds">
+
+            <div class="govuk-box-highlight">
+                <h1 class="heading-large"><img src="public/images/icons/tick.png"> Date change received</h1>
+             <strong class="heading-medium">Your end date has been updated to<br/>{{endDate}}</strong>
+            </div>
+
+            <p>The amount you have to pay has changed:</p>
+
+
+                <div class="column-half space">
+                    <p><span class="font-xsmall">From</span><br /><span class="bold-large" style="color: #6F777B">£71.50</span>
+                    <br /><span class="heading-small">Tax year 2014 to 2015</span></p>
+                </div>
+                <div class="column-half space">
+                    <p><span class="font-xsmall">To</span><br /><span class="bold-large" style="color: #28a197">£93.50</span>
+                    <br /><span class="heading-small">Tax year 2014 to 2015</span></p>
+                </div>
+            <h2 class="heading-medium">What happens next?</h2>
+            <p>You can view your updated <a href="view-end-date-changed.html">self-employment details</a> or you can <a href="view-end-date-changed.html">make another change</a>.</p>
+
+            <div class="panel panel-border-narrow space-smaller">
+                <a href="sa-nics-agreed.html" class="button">Return to Self Assessment</a><br />
+                <p>When returning to the Self Assessment form, you'll need to click recalculate to get the new amount you have to pay.
+                </p>
+            </div>
+            
+            <hr />
+            {{! <p><a href=“https://www.gov.uk/done/name-of-your-service”>What did you think of this service?</a> (takes 30 seconds)</p> }}
+            <p><a href=“#”>What did you think of this service?</a> (takes 30 seconds)</p>
+
+        </div>
+    </div>
+
+
+{{/main}}
+
+{{/layout}}
