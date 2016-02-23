@@ -53,6 +53,8 @@ app.get('/confirm-end', function (req, res) {
     });
 });
 
+
+
 app.post('/change-end-date-second', function (req, res) {
     req.session.endDaySecond = req.body.endDaySecond;
     req.session.endMonthSecond = req.body.endMonthSecond;
@@ -73,6 +75,30 @@ app.get('/confirm-end-second', function (req, res) {
     var date = moment(req.session.endYearSecond + '-' + req.session.endMonthSecond + '-' + req.session.endDaySecond);
     res.render('confirm-end-second', {
         endDateSecond: date.day(+6).format(format)
+    });
+});
+
+
+
+app.post('/cease', function (req, res) {
+    req.session.ceaseDay = req.body.ceaseDay;
+    req.session.ceaseMonth = req.body.ceaseMonth;
+    req.session.ceaseYear = req.body.ceaseYear;
+    res.redirect(req.body['next-page']);
+});
+
+app.get('/review-cease', function (req, res) {
+    var date = moment(req.session.ceaseYear + '-' + req.session.ceaseMonth + '-' + req.session.ceaseDay);
+    res.render('review-cease', {
+        inputDate: date.format(format),
+        ceaseDate: date.day(+6).format(format)
+    });
+});
+
+app.get('/confirm-cease', function (req, res) {
+    var date = moment(req.session.ceaseYear + '-' + req.session.ceaseMonth + '-' + req.session.ceaseDay);
+    res.render('confirm-cease', {
+        ceaseDate: date.day(+6).format(format)
     });
 });
 
