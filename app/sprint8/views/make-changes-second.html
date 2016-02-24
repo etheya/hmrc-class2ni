@@ -1,0 +1,62 @@
+{{<layout}}
+
+{{$pageTitle}}
+	Change your liability dates
+{{/pageTitle}}
+
+{{$main}}
+
+
+        <div class="grid-row">
+            <div class="column-two-thirds">
+                <a href="javascript:history.go(-1)" class="link-back">Back</a>
+                <h1 class="heading-xlarge info-display">Update a period</h1>
+                
+                <table class="space">
+                    <thead>
+                        <tr>
+                            <th width="50%">Start date</th>
+                            <th width="50%">End date</th>
+                        </tr>
+                    </thead>
+                    <tbody>                        
+                        <tr>
+                            <td>16 November 2014</td>
+                            <td>Ongoing</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <form method="post">
+                    
+                    <div class="form-group">
+                        <fieldset>
+                            <legend class="form-label-bold">What would you like to do?</legend>
+                            <div class="form-group">
+                            <label class="block-label" for="radio-1">
+                                <input id="radio-1" type="radio" name="next-page" value="change-start-date">Change start date of 16 November 2014
+                            </label>
+                            <label class="block-label" for="radio-2">
+                                <input id="radio-2" type="radio" name="next-page" value="cease">End this self-employment period
+                            </label>
+                            <label class="block-label" for="radio-3">
+                                <input id="radio-3" type="radio" name="next-page" value="delete-period-second">Permanently delete this period
+                            </label>
+                            </div>
+                        </fieldset>
+                    </div>
+
+                    <div class="form-group">
+                        <input class="button" type="submit" value="Continue">
+                    </div>
+                </form>
+                <a href="view.html">Cancel</a>
+
+            </div>
+        </div>
+
+
+
+{{/main}}
+
+{{/layout}}
