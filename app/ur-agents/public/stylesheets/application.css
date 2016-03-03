@@ -1728,3 +1728,9 @@ input[type=number] {
 
 .error-message.hidden {
   display: none; }
+
+.delagationbanner {
+  border-left: 3px solid #005ea5;
+  background-color: #def;
+  margin: 20px 0 0;
+  padding: 0.6em 1em 0.5em 1em; }
