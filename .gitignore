@@ -4,5 +4,6 @@
 /global/admin/public/
 /global/template/
 /views/
+/app/*/public/stylesheets
 npm-debug.log
 .idea/

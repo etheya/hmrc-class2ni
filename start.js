@@ -7,7 +7,6 @@ var express = require('express'),
   glob = require('glob-all'),
   hjs = require('hjs'),
   auth = require('basic-auth-connect'),
-  session = require('express-session'),
 
   username = process.env.USERNAME,
   password = process.env.PASSWORD,
@@ -24,15 +23,11 @@ app.locals.assetPath = '/';
 app.locals.localAssets = '/';
 app.locals.isDev = app.get('env') === 'development';
 
+var webPort;
+webPort = process.env.PORT || 3000;
+
 app.use(favicon(
   path.join(__dirname, 'global', 'public', 'images', 'favicon.ico')));
-
-// serve static global assets
-app.use('/',
-  express.static(path.join(__dirname, 'global', 'public')));
-
-app.use('/public/images/icons',
-  express.static(path.join(__dirname, 'global', 'public', 'images')));
 
 // Password protection for Heroku
 if (!app.locals.isDev) {
@@ -42,10 +37,6 @@ if (!app.locals.isDev) {
   }
   app.use(auth(process.env.USERNAME, process.env.PASSWORD));
 }
-
-app.use(session({
-  secret: 'womble'
-}));
 
 app.use(bodyParser.urlencoded({ extended : true }));
 
@@ -67,16 +58,26 @@ app.set('views', glob.sync([
   __dirname + '/global/template',
 ]));
 
+// serve static global assets
+app.use('/', 
+  express.static(path.join(__dirname, 'global', 'public')));
+
+app.use('/public/images/icons', 
+  express.static(path.join(__dirname, 'global', 'public', 'images')));
+
 // include the app file from each sub project
 // as sub app mounted at the prefix of the name
 // of the folder
-glob.sync(__dirname + '/app/**/app.js')
+glob.sync(__dirname + '/app/*')
   .map(function (e) {
+
     var p = './' + path.relative(
       __dirname, e
     ).replace(/\\/g, '/');
-    var name = e.replace(/^.*app(\/.*?)\/.*$/, '$1');
-    var sub = require(p);
+
+    var meta = fs.readJsonSync(p + '/meta.json');
+    var name = e.replace(/^.*app(\/.*?)$/, '$1');
+    var sub = require(p + '/app.js');
     // if a get request falls through to this
     // point we check to see if we have a view
     // that matches the url and render that.
@@ -112,4 +113,6 @@ if (app.locals.isDev) {
 // global controllers
 require('./lib/controllers/index.js')(app);
 
-app.listen(process.env.PORT || 3000);
+app.listen(webPort);
+
+console.log("Starting express web server http://localhost:" + webPort);
