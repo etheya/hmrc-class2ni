@@ -1,5 +1,6 @@
 {
   "name": "User Research",
   "description": "The version of the prototype to use for user research session 27/01/2016",
-  "phase": "alpha"
+  "phase": "alpha",
+  "hidden": true
 }

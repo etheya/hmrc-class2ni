@@ -1,5 +1,6 @@
 {
   "name": "NPS downtime",
   "description": "Message to show when NPS is down - 2am to 5am",
-  "phase": "beta"
+  "phase": "beta",
+  "hidden": true
 }

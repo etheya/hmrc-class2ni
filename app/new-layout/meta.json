@@ -1,5 +1,6 @@
 {
   "name": "New Layout",
   "description": "Place for trying out things...",
-  "phase": "beta"
+  "phase": "beta",
+  "hidden": true
 }

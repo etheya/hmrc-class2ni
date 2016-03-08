@@ -1,5 +1,6 @@
 {
   "name": "Sprint 4 - Laura Rishworth",
   "description": "Sprint 4, personalised to Laura Rishworth.",
-  "phase": "alpha"
+  "phase": "alpha",
+  "hidden": true
 }

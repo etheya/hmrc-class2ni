@@ -1,5 +1,6 @@
 {
   "name": "Sprint 7",
   "description": "Modified version of journey with single update button for periods and updated text on view page",
-  "phase": "beta"
+  "phase": "beta",
+  "hidden": true
 }

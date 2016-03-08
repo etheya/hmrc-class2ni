@@ -1,5 +1,6 @@
 {
   "name": "Sprint 4 - Leigh Smith",
   "description": "Sprint 4, personalised to Leigh Smith.",
-  "phase": "alpha"
+  "phase": "alpha",
+  "hidden": true
 }

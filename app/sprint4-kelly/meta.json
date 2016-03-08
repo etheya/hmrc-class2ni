@@ -1,5 +1,6 @@
 {
   "name": "Sprint 4 - Kelly De Jong",
   "description": "Sprint 4, personalised to Kelly De Jong.",
-  "phase": "alpha"
+  "phase": "alpha",
+  "hidden": true
 }
