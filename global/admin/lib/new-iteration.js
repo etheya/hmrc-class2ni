@@ -1,11 +1,12 @@
-var apps = require('../../../lib/models/apps-model.js'),
-  path = require('path'),
+var path = require('path'),
   fs = require('fs-extra'),
   util = require('./util.js');
 
 var cwd = process.cwd();
 
 module.exports = function (app) {
+
+ var apps = require('../../../lib/models/apps-model.js')(app);
 
   app.get('/new-iteration', function (req, res) {
     res.render('new-iteration', {
@@ -17,7 +18,8 @@ module.exports = function (app) {
     var meta = {
       name : req.body.name,
       description : req.body.description,
-      phase : req.body.phase
+      phase : req.body.phase,
+      hidden : req.body.hidden == 'true'
     };
     fs.copySync(
       path.join(cwd, 'app', req.body.app),

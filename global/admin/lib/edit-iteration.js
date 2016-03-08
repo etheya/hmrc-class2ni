@@ -1,5 +1,4 @@
-var apps = require('../../../lib/models/apps-model.js'),
-  _ = require('lodash'),
+var _ = require('lodash'),
   path = require('path'),
   fs = require('fs-extra'),
   util = require('./util.js');
@@ -7,6 +6,8 @@ var apps = require('../../../lib/models/apps-model.js'),
 var cwd = process.cwd();
 
 module.exports = function (app) {
+
+  var apps = require('../../../lib/models/apps-model.js')(app);
 
   app.get('/edit-iteration', function (req, res) {
     res.render('edit-iteration-summary', {
@@ -42,7 +43,8 @@ module.exports = function (app) {
       var meta = {
         name : req.body.name,
         description : req.body.description,
-        phase : req.body.phase
+        phase : req.body.phase,
+        hidden : req.body.hidden == 'true'
       };
       var newPath = path.join(cwd, 'app', req.body.path);
       fs.writeJsonSync(

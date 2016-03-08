@@ -9,20 +9,16 @@
 <div class="grid-row">
 	<div class="column-two-thirds">
 
-    {{#isDev}}
-      <div class="panel-edit">
-        <a href="/admin/edit-intro" class="button">Edit Introduction</a>
-    {{/isDev}}
-
     {{#intro}}
   		  <h1 class="heading-xlarge">{{h1}}</h1>
         <p class="lede">{{description}}</p>
     {{/intro}}
 
     {{#isDev}}
-      </div>
+        <p><a href="/admin/edit-intro">Edit title and introduction text</a></p>
     {{/isDev}}
-        
+
+
     {{#isDev}}
       <div class="panel panel-border-wide">
         <a href="/admin/new-iteration" class="button">Create a new iteration</a>
