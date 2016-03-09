@@ -1,0 +1,71 @@
+{{<layout}}
+
+{{$pageTitle}}
+	Update a period
+{{/pageTitle}}
+
+{{$main}}
+
+        <div class="delagationbanner">You are acting on behalf of <span class="bold-small">Mr D Anderson</span>.</div>
+        <div class="grid-row">
+            <div class="column-two-thirds">
+                <a href="javascript:history.go(-1)" class="link-back">Back</a>
+                <h1 class="heading-xlarge info-display">Update a period</h1>
+                
+                <table class="space">
+                    <thead>
+                        <tr>
+                            <th width="50%">Start date</th>
+                            <th width="50%">End date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Continuing from<br />previous year</td>
+                            <td>7 June 2014</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <form method="post">
+                    
+                    <div class="form-group">
+                        <fieldset>
+                            <legend class="form-label-bold">What would you like to do?</legend>
+                            <div class="form-group">
+                            <label class="block-label" for="radio-1">
+                                <input id="radio-1" type="radio" name="next-page" value="change-end-date">Change end date 7 June 2014
+                            </label>
+                            </div>
+                        </fieldset>
+                    </div>
+
+                    <details class="space">
+
+                            <summary><span class="summary">Why can't I change the start date or delete this period?</span></summary>
+
+                            <div class="panel panel-border-narrow">
+
+                              <p>The start date of this period is outside the tax year 2014 to 2015.</p>
+                                <p>You can use the <a href="https://public-online.hmrc.gov.uk/lc/content/xfaforms/profiles/forms.html?contentRoot=repository:///Applications/NICs_iForms/1.0/CWF1_20156&template=CWF1.xdp" target="_blank" rel="external">CWF1 form (opens in a new tab)</a> to change the start date.</p>
+                                <p>You can use the <a href="https://online.hmrc.gov.uk/shortforms/form/CeaseTrading" target="_blank" rel="external">stopping self-employment form to delete the period (opens in a new tab)</a>.</p>
+                                <p>These changes or deletions may take up to 48 hours to appear.</p>
+
+                            </div>
+
+                        </details>
+
+                    <div class="form-group">
+                        <input class="button" type="submit" value="Continue">
+                    </div>
+                </form>
+                <a href="view.html">Cancel</a>
+
+            </div>
+        </div>
+
+
+
+{{/main}}
+
+{{/layout}}
