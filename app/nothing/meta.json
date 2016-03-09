@@ -2,5 +2,5 @@
   "name": "Nothing Owed",
   "description": "Example of view page when no NICs are owed.",
   "phase": "beta",
-  "hidden": true
+  "hidden": false
 }
