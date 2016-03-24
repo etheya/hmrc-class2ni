@@ -1,0 +1,6 @@
+{
+  "name": "Shutter Page",
+  "description": "Page to display when SA page is up but our service isn't yet live.",
+  "phase": "beta",
+  "hidden": false
+}
