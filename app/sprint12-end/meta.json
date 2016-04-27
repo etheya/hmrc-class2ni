@@ -1,0 +1,6 @@
+{
+  "name": "Sprint 12 - End only service",
+  "description": "Modified service to only allow ending of self-employment",
+  "phase": "beta",
+  "hidden": false
+}
