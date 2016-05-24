@@ -1,0 +1,156 @@
+{{<layout}}
+
+{{$pageTitle}}
+	End your self-employment
+{{/pageTitle}}
+
+{{$main}}
+        <div class="grid-row">
+            <div class="column-two-thirds">
+                <a href="javascript:history.go(-1)" class="link-back">Back</a>
+                <h1 class="heading-xlarge info-display">Change your end date</h1>
+                
+                
+                <div class="notice space-smaller">
+                    <i class="icon icon-information">
+                      <span class="visuallyhidden">Information</span>
+                    </i>
+                    <strong class="bold-small">
+                        Changing your self-employment dates may affect:
+                    </strong>
+                </div>
+                <ul class="list-bullet space-smaller">
+                    <li>how many qualifying years you have for State Pension</li>
+                    <li>the amount of State Pension you’re likely to get</li>
+                    <li>certain benefits you are entitled to</li>
+                </ul>
+                <p class="space"><a href="https://www.gov.uk/national-insurance/what-national-insurance-is-for" target="_blank" rel="external">Find out more about what benefits your National Insurance contributions count towards (opens in a new tab)</a></p>
+
+                <table class="space">
+                    <thead>
+                        <tr>
+                            <th width="50%">Start date</th>
+                            <th width="50%">End date</th>
+                        </tr>
+                    </thead>
+                    <tbody>                        
+                        <tr>
+                            <td>15 November 2015</td>
+                            <td>Ongoing</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <form method="post" class="space">
+                    <div id="invalid-date" class="error-summary hidden" role="group" aria-labelledby="error-summary-heading" tabindex="-1">
+
+                      <h1 class="heading-medium error-summary-heading" id="error-summary-heading">
+                        There is a problem
+                      </h1>
+                      <ul class="error-summary-list">
+                        <li><a href="#cease-date">You must enter a date between 5 April 2015 and 9 April 2016</a></li>
+                      </ul>
+                        
+                      <p>If your self-employment ended outside of these dates you can let us know by using the <a href="https://online.hmrc.gov.uk/shortforms/form/CeaseTrading" target="_blank" rel="external">stopping self-employment form (opens in a new tab)</a>.</p>
+                    </div>
+                    <div id="overlap-date" class="error-summary hidden" role="group" aria-labelledby="error-summary-heading" tabindex="-1">
+
+                      <h1 class="heading-medium error-summary-heading" id="error-summary-heading">
+                        There is a problem
+                      </h1>
+                        <p>Check you have entered the date correctly</p>
+                      <ul class="error-summary-list">
+                        <li><a href="#cease-date">The date you have entered overlaps with another self-employment period: Continuing from previous year to 6 June 2015</a></li>
+                      </ul>
+                    </div>
+                    <div id="date-entry" class="form-date form-group">
+                        <fieldset>
+                        
+                            <legend id="cease-date" class="form-label-bold">Tell us your end date</legend>
+                            <p class="form-hint">For example, 31 3 2015</p>
+                            <p class="error-message hidden" id="error-cease-date">Enter a date between 5 April 2015 and 9 April 2016</span>
+                            <p class="error-message hidden" id="error-overlap-date">Enter a date that doesn’t overlap with another self-employment period</span>
+                            <div class="form-group form-group-day">
+                                <label for="ceaseDay">Day</label>
+                                <input autocomplete="off" class="form-control" id="ceaseDay" name="ceaseDay" type="number"  pattern="[0-9]*" min="1" max="31" maxlength="2" required aria-describedby="error-cease-date">
+                            </div>
+                            <div class="form-group form-group-month">
+                                <label for="ceaseMonth">Month</label>
+                                <input autocomplete="off" class="form-control" id="ceaseMonth" name="ceaseMonth" type="number" maxlength="2" pattern="[0-9]*" min="1" max="12" required>
+                            </div>
+                            <div class="form-group form-group-year">
+                                <label for="ceaseYear">Year</label>
+                                <input autocomplete="off" class="form-control" id="ceaseYear" name="ceaseYear" type="number" maxlength="4" pattern="[0-9]*" min="2014" max="2015" required>
+                            </div>
+                        </fieldset>
+                    </div>
+
+
+                    <div class="form-group>">
+                        <input type="hidden" name="next-page" value="review-cease">
+                        <input class="button" id="continue"  value="Continue" type="button">
+                    </div>
+                </form>
+                <a href="view.html">Cancel</a>
+            </div>
+        </div>
+
+<script>
+//within two dates 5-4-2015 / 9-4-2016
+//not within two dates 5-4-2015 / 6-6-2015
+
+document.getElementById("continue").addEventListener("click", newFunction);
+    
+var d = document.getElementById("ceaseDay");
+var m = document.getElementById("ceaseMonth");
+var y = document.getElementById("ceaseYear");
+    
+var dateOne = new Date(2015,3,5);
+var dateTwo = new Date(2016,3,9);
+var dateThree = new Date(2015,3,5);
+var dateFour = new Date(2015,5,6);
+    
+var withinRange;
+var notOverlapping;
+    
+function newFunction() {
+    var dateEntered = new Date(y.value, m.value - 1, d.value);
+    if ( dateEntered <= dateOne || dateEntered > dateTwo ) {
+        $('#error-cease-date').removeClass('hidden');
+        $('#date-entry').addClass('error');
+        $('#invalid-date').removeClass('hidden');
+        withinRange = false;
+      
+    } else {
+        $('#error-cease-date').addClass('hidden');
+        $('#date-entry').removeClass('error');
+        $('#invalid-date').addClass('hidden');
+        withinRange = true;
+      
+    }
+    if ( dateEntered > dateThree && dateEntered < dateFour ) {
+        $('#error-overlap-date').removeClass('hidden');
+        $('#date-entry').addClass('error');
+        $('#overlap-date').removeClass('hidden');
+        $('#error-cease-date').addClass('hidden');
+        $('#invalid-date').addClass('hidden');
+        notOverlapping = false;
+
+    } else {
+        $('#error-overlap-date').addClass('hidden');
+        $('#overlap-date').addClass('hidden');
+        $('#error-cease-date').removeClass('hidden');
+        notOverlapping = true;
+    }    
+     if (withinRange == true && notOverlapping == true) {
+        $('#continue').attr('type', 'submit');
+    }
+
+}
+
+</script>
+
+
+{{/main}}
+
+{{/layout}}
