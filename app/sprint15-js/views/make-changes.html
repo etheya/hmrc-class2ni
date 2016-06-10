@@ -1,0 +1,76 @@
+{{<layout}}
+
+{{$pageTitle}}
+	Update a period
+{{/pageTitle}}
+
+{{$main}}
+
+        
+        <div class="grid-row">
+            <div class="column-two-thirds">
+                <a href="javascript:history.go(-1)" class="link-back">Back</a>
+                <h1 class="heading-xlarge info-display">Update a period</h1>
+                
+                <table class="space">
+                    <thead>
+                        <tr>
+                            <th width="50%">Start date</th>
+                            <th width="50%">End date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Continuing from<br />the previous year</td>
+                            <td>6 June 2015</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <form method="post">
+                    
+                    <div class="form-group">
+                        <fieldset>
+                            <legend class="form-label-bold">What would you like to do?</legend>
+                            <div class="form-group">
+                            <label class="block-label" for="radio-1">
+                                <input id="radio-1" type="radio" name="next-page" value="change-end-date">Change the end date 6 June 2015
+                            </label>
+                            </div>
+                        </fieldset>
+                    </div>
+
+                    <details class="space">
+
+                            <summary><span class="summary">Why can't I change the start date or delete this period?</span></summary>
+
+                            <div class="panel panel-border-narrow">
+                                <p class="heading-small">The start date of this period is outside the tax year 2015 to 2016.</p>
+                                <p>To change the start date or delete this period, you can contact HMRC on:</p>
+                                <p>Telephone: 0300 200 3500</p>
+                                <p>Textphone: 0300 200 3519</p>
+                                <p>Outside UK: +44 191 203 7010</p>
+                                <h2 class="heading-small">Opening times</h2>
+                                <p>8am to 8pm, Monday to Friday<br> 
+                                    8am to 4pm Saturday<br></p>
+                                <p>Closed Sundays and bank holidays</p>
+                                <p>Phone lines are less busy before 10am, Monday to Friday</p>
+                                <p class="call-charges"><a href="https://www.gov.uk/call-charges" target="_blank" rel="external">Find out about call charges (opens in a new tab)</a></p>         
+                            </div>
+
+                        </details>
+
+                    <div class="form-group">
+                        <input class="button" type="submit" value="Continue">
+                    </div>
+                </form>
+                <a href="view.html">Cancel</a>
+
+            </div>
+        </div>
+
+
+
+{{/main}}
+
+{{/layout}}

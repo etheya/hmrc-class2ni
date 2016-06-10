@@ -1,0 +1,130 @@
+{{<layout}}
+
+{{$pageTitle}}
+	Update your self-employment details
+{{/pageTitle}}
+
+{{$main}}
+
+
+<div class="grid-row">
+    <h1 class="heading-xlarge info-display">Enter your self-employment periods <br />for tax year 2015 to 2016</h1>
+    <p>Please enter in date order</p>        
+    <form>
+        <h2 class="heading-medium">FIRST PERIOD</h2>
+        <div class="form-group">
+
+            <legend id="new-end-date" class="form-label-bold">Start date:</legend>
+
+            <label class="block-label" for="continuing1">
+              <input id="continuing1" type="radio" name="start-options" value="Continuing from the previous tax year">
+              Continuing from the previous tax year
+            </label>
+
+            <label class="block-label" data-target="enter-start-date1" for="start-date">
+              <input id="start-date1" type="radio" name="start-options" value="Enter a specific date within tax year 2015 to 2016">
+              Enter a specific date within tax year 2015 to 2016
+            </label>
+
+            <div class="panel panel-border-narrow js-hidden" id="enter-start-date1">
+            <label class="form-label bold-medium" for="date-entry-start1">Enter start date</label>
+                <div id="date-entry-start1" class="form-date form-group">
+                    <fieldset>
+                        <p class="form-hint">For example, 31 3 2015</p>
+                        <div class="form-group form-group-day">
+                            <label for="startDay">Day</label>
+                            <input autocomplete="off" class="form-control" id="startDay1" name="startDay" type="number"  pattern="[0-9]*">
+                        </div>
+                        <div class="form-group form-group-month">
+                            <label for="startMonth">Month</label>
+                            <input autocomplete="off" class="form-control" id="startMonth1" name="startMonth" type="number" maxlength="2" pattern="[0-9]*">
+                        </div>
+                        <div class="form-group form-group-year">
+                            <label for="startYear">Year</label>
+                            <input autocomplete="off" class="form-control" id="startYear1" name="startYear" type="number" maxlength="4" pattern="[0-9]*">
+                        </div>
+                    </fieldset>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+
+            <legend id="new-end-date" class="form-label-bold">End date:</legend>
+
+            <label class="block-label" for="ongoing1">
+              <input id="ongoing1" type="radio" name="end-options" value="Ongoing">
+              Ongoing - still self-employed now
+            </label>
+
+            <label class="block-label" data-target="enter-end-date1" for="end-date1">
+              <input id="end-date1" type="radio" name="end-options" value="Enter a specific date within tax year 2015 to 2016">
+              Enter a specific date within tax year 2015 to 2016
+            </label>
+
+            <div class="panel panel-border-narrow js-hidden" id="enter-end-date1">
+            <label class="form-label bold-medium" for="date-entry-end">Enter start date</label>
+                <div id="date-entry-end1" class="form-date form-group">
+                    <fieldset>
+                        <p class="form-hint">For example, 31 3 2015</p>
+                        <div class="form-group form-group-day">
+                            <label for="endDay">Day</label>
+                            <input autocomplete="off" class="form-control" id="endDay1" name="endDay" type="number" pattern="[0-9]*">
+                        </div>
+                        <div class="form-group form-group-month">
+                            <label for="endMonth">Month</label>
+                            <input autocomplete="off" class="form-control" id="endMonth1" name="endMonth" type="number" maxlength="2" pattern="[0-9]*">
+                        </div>
+                        <div class="form-group form-group-year">
+                            <label for="endYear">Year</label>
+                            <input autocomplete="off" class="form-control" id="endYear1" name="endYear" type="number" maxlength="4" pattern="[0-9]*">
+                        </div>
+                    </fieldset>
+                </div>
+            </div>
+
+        </div>
+        
+        <hr />
+        
+            <div class="form-group" style="margin-top:30px">
+            <button class="button" onClick="save();">Continue</button>
+          </a>
+        </p>
+      </div>
+
+    </form>
+</div>
+
+
+<script>
+function save()
+{
+  var continuing1 = document.getElementById('continuing1');
+  
+  sessionStorage.setItem('continuing1',$('input[name="continuing1"]:checked').val());
+    
+  var startDay1 = document.getElementById('startDay1').value;
+  var startMonth1 = document.getElementById('startMonth1').value;
+  var startYear1 = document.getElementById('startYear1').value;
+
+  sessionStorage.setItem('startDay1', startDay1);
+  sessionStorage.setItem('startMonth1', startMonth1);
+  sessionStorage.setItem('startYear1', startYear1);
+    
+  var ongoing1 = document.getElementById('ongoing1').isTrue;
+  
+  sessionStorage.setItem('ongoing1', ongoing1);
+    
+  var endDay1 = document.getElementById('endDay1').value;
+  var endMonth1 = document.getElementById('endMonth1').value;
+  var endYear1 = document.getElementById('endYear1').value;
+
+  sessionStorage.setItem('endDay1', endDay1);
+  sessionStorage.setItem('endMonth1', endMonth1);
+  sessionStorage.setItem('endYear1', endYear1);
+}
+</script>
+
+{{/main}}
+
+{{/layout}}
