@@ -83,14 +83,6 @@
             </div>
 
         </div>
-        
-        <hr />
-        
-            <div class="form-group" style="margin-top:30px">
-            <button class="button" onClick="save();">Continue</button>
-          </a>
-        </p>
-      </div>
 
     </form>
 
@@ -137,32 +129,32 @@
 
             <legend class="form-label-bold">End date:</legend>
 
-            <label class="block-label" for="ongoing1">
-              <input id="ongoing1" type="radio" name="end-options1" value="Ongoing">
+            <label class="block-label" for="ongoing2">
+              <input id="ongoing2" type="radio" name="end-options2" value="Ongoing">
               Ongoing - still self-employed now
             </label>
 
-            <label class="block-label" data-target="enter-end-date1" for="end-date1">
-              <input id="end-date1" type="radio" name="end-options1" value="Date">
+            <label class="block-label" data-target="enter-end-date2" for="end-date2">
+              <input id="end-date2" type="radio" name="end-options2" value="Date">
               Enter a specific date within tax year 2015 to 2016
             </label>
 
             <div class="panel panel-border-narrow js-hidden" id="enter-end-date1">
-            <label class="form-label bold-medium" for="date-entry-end">Enter start date</label>
-                <div id="date-entry-end1" class="form-date form-group">
+            <label class="form-label bold-medium" for="date-entry-end2">Enter start date</label>
+                <div id="date-entry-end2" class="form-date form-group">
                     <fieldset>
                         <p class="form-hint">For example, 31 3 2015</p>
                         <div class="form-group form-group-day">
-                            <label for="endDay">Day</label>
-                            <input autocomplete="off" class="form-control" id="endDay1" name="endDay" type="number" pattern="[0-9]*">
+                            <label for="endDay2">Day</label>
+                            <input autocomplete="off" class="form-control" id="endDay2" name="endDay" type="number" pattern="[0-9]*">
                         </div>
                         <div class="form-group form-group-month">
-                            <label for="endMonth">Month</label>
-                            <input autocomplete="off" class="form-control" id="endMonth1" name="endMonth" type="number" maxlength="2" pattern="[0-9]*">
+                            <label for="endMonth2">Month</label>
+                            <input autocomplete="off" class="form-control" id="endMonth2" name="endMonth" type="number" maxlength="2" pattern="[0-9]*">
                         </div>
                         <div class="form-group form-group-year">
-                            <label for="endYear">Year</label>
-                            <input autocomplete="off" class="form-control" id="endYear1" name="endYear" type="number" maxlength="4" pattern="[0-9]*">
+                            <label for="endYear2">Year</label>
+                            <input autocomplete="off" class="form-control" id="endYear2" name="endYear" type="number" maxlength="4" pattern="[0-9]*">
                         </div>
                     </fieldset>
                 </div>
@@ -173,7 +165,9 @@
     </form>
 
     <div class="form-group" style="margin-top:30px">
-        <button class="button" onClick="save();">Continue</button>
+        <a href="view.html">
+            <button class="button" onClick="save();">Continue</button>
+        </a>
     </div>
 </div>
 
@@ -182,28 +176,44 @@
 function save()
 {
   var period1start =  $("input[type='radio'][name='start-options1']:checked").val();
-  
+  var period2start =  $("input[type='radio'][name='start-options2']:checked").val();
+
   sessionStorage.setItem('period1start', period1start);
+  sessionStorage.setItem('period2start', period2start);
     
   var startDay1 = document.getElementById('startDay1').value;
   var startMonth1 = document.getElementById('startMonth1').value;
   var startYear1 = document.getElementById('startYear1').value;
+  var startDay2 = document.getElementById('startDay2').value;
+  var startMonth2 = document.getElementById('startMonth2').value;
+  var startYear2 = document.getElementById('startYear2').value;
 
   sessionStorage.setItem('startDay1', startDay1);
   sessionStorage.setItem('startMonth1', startMonth1);
   sessionStorage.setItem('startYear1', startYear1);
+  sessionStorage.setItem('startDay2', startDay2);
+  sessionStorage.setItem('startMonth2', startMonth2);
+  sessionStorage.setItem('startYear2', startYear2);
     
   var period1end =  $("input[type='radio'][name='end-options1']:checked").val();
+  var period2end =  $("input[type='radio'][name='end-options2']:checked").val();
   
   sessionStorage.setItem('period1end', period1end);
+  sessionStorage.setItem('period2end', period2end);
     
   var endDay1 = document.getElementById('endDay1').value;
   var endMonth1 = document.getElementById('endMonth1').value;
   var endYear1 = document.getElementById('endYear1').value;
+  var endDay2 = document.getElementById('endDay2').value;
+  var endMonth2 = document.getElementById('endMonth2').value;
+  var endYear2 = document.getElementById('endYear2').value;
 
   sessionStorage.setItem('endDay1', endDay1);
   sessionStorage.setItem('endMonth1', endMonth1);
   sessionStorage.setItem('endYear1', endYear1);
+  sessionStorage.setItem('endDay2', endDay2);
+  sessionStorage.setItem('endMonth2', endMonth2);
+  sessionStorage.setItem('endYear2', endYear2);
 }
 </script>
 

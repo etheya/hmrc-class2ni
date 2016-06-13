@@ -30,39 +30,21 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td>Continuing from<br />the previous year</td>
-                            <td>6 June 2015</td>
+                            <td>
+                                <span id="period1startDate"></span> 
+                            </td>
+                            <td><span id="period1endDate"></span></td>
                             <td><a class="button" href="make-changes" style="float: right">Update<span class="visuallyhidden"> period Continuing from previous year to 6 June 2015</span></a></td>
                         </tr>
-                        <!--
-                        <tr class="reduce-row-padding">
-                            <td colspan="3">
-                                <details>
-                                    <summary><span class="summary">What was my start date?</span></summary>
-                                    <div class="panel panel-border-narrow">
-                                        This period of self employment started on 15 April 2000
-                                    </div>
-                                </details>
-                            </td>
-                        </tr>
-                         -->
+                        
                         <tr>
-                            <td>15 November 2015</td>
-                            <td>Ongoing</td>
+                            <td>
+                                <span id="period2startDate"></span>
+                            </td>
+                            <td><span id="period2endDate"></span></td>
                             <td><a class="button" href="make-changes-second" style="float: right">Update<span class="visuallyhidden"> period 15 November 2015 to Ongoing</span></a></td>
                         </tr>
-                        <!--
-                        <tr class="reduce-row-padding">
-                            <td colspan="3">
-                                <details>
-                                    <summary><span class="summary">What is the end date?</span></summary>
-                                    <div class="panel panel-border-narrow">
-                                        This period of self employment ended on 2 June 2016
-                                    </div>
-                                </details>
-                            </td>
-                        </tr>
-                         -->
+                        
                     </tbody>
                 </table>
                 
@@ -123,7 +105,76 @@
     </div>
 
 
+ <script>
 
+  var period1start = sessionStorage.getItem('period1start');
+  var period2start = sessionStorage.getItem('period2start');
+  var startDay1 = sessionStorage.getItem('startDay1');
+  var startMonth1 = sessionStorage.getItem('startMonth1');
+  var startYear1 = sessionStorage.getItem('startYear1');
+  var startDay2 = sessionStorage.getItem('startDay2');
+  var startMonth2 = sessionStorage.getItem('startMonth2');
+  var startYear2 = sessionStorage.getItem('startYear2');
+     
+  var period1end = sessionStorage.getItem('period1end');
+  var period21end = sessionStorage.getItem('period2end');
+  var endDay1 = sessionStorage.getItem('endDay1');
+  var endMonth1 = sessionStorage.getItem('endMonth1');
+  var endYear1 = sessionStorage.getItem('endYear1');
+  var endDay2 = sessionStorage.getItem('endDay2');
+  var endMonth2 = sessionStorage.getItem('endMonth2');
+  var endYear2 = sessionStorage.getItem('endYear2');
+     
+  var months = new Array(12);
+      months[1] = "January";
+      months[2] = "February";
+      months[3] = "March";
+      months[4] = "April";
+      months[5] = "May";
+      months[6] = "June";
+      months[7] = "July";
+      months[8] = "August";
+      months[9] = "September";
+      months[10] = "October";
+      months[11] = "November";
+      months[12] = "December";
+
+var app = require('../../lib/subapp.js')(__dirname);
+var moment = require('moment');
+     
+  if (sessionStorage.getItem("period1start") == 'Continuing')
+  {
+    document.getElementById("period1startDate").innerHTML = "Continuing from<br />the previous year";
+  } else 
+  {
+    document.getElementById("period1startDate").innerHTML = startDay1 + " " + months[startMonth1] + " " + startYear1;
+  }
+     
+    if (sessionStorage.getItem("period1end") == 'Ongoing')
+  {
+    document.getElementById("period1endDate").innerHTML = "Ongoing";
+  } else 
+  {
+    document.getElementById("period1endDate").innerHTML = endDay1 + " " + months[endMonth1] + " " + endYear1;
+  }
+     
+       if (sessionStorage.getItem("period2start") == 'Continuing')
+  {
+    document.getElementById("period2startDate").innerHTML = "Continuing from<br />the previous year";
+  } else 
+  {
+    document.getElementById("period2startDate").innerHTML = startDay2 + " " + months[startMonth2] + " " + startYear2;
+  }
+     
+       if (sessionStorage.getItem("period2end") == 'Ongoing')
+  {
+    document.getElementById("period2endDate").innerHTML = "Ongoing";
+  } else 
+  {
+    document.getElementById("period2endDate").innerHTML = moment(endDay2.day(+6) + " " + months[endMonth2] + " " + endYear2);
+  }
+      
+</script>
 
 
 {{/main}}
